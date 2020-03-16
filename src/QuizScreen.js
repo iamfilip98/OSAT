@@ -11,8 +11,6 @@ class QuizScreen extends React.Component {
           question2: false,
           question3: false,
           result: false
-          
-
       }
   }
 
