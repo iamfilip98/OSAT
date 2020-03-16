@@ -28,14 +28,14 @@ class App extends Component {
   }
 
   changeScreen = (e) =>{
-    e.preventDefault();
+    
     this.setState({ loginscreen: false });
     this.setState({ mainscreen: true });
    
   }
 
   changeScreenQuiz = (e) =>{
-    e.preventDefault();
+    
     this.setState({ mainscreen: false });
     this.setState({ quizscreen: true });
    
@@ -54,7 +54,7 @@ class App extends Component {
   }
 
   handleLogIn = (e) =>{
-    e.preventDefault();
+    
     this.setState({ isLoggedIn: true });
 
   }

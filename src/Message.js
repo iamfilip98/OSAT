@@ -5,8 +5,6 @@ class Message extends React.Component {
       super(props);
   }
 
-
-
   render() {
     return (
       <div className="login">
@@ -14,8 +12,6 @@ class Message extends React.Component {
             <div className="box">
                 Message!
             </div>
-            
-            
         </main>
       </div>
     );

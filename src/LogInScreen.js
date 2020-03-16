@@ -2,34 +2,70 @@ import React, {Component} from 'react';
 import Logo from "./assets/OSAT.png";
 
 
-
-
-
 class LogInScreen extends Component {
 
   constructor(props) {
     super(props);
+    this.state={
+      correctUser: {
+        "John":"1234",
+        "Tim":"pass",
+        "Lennard":"bow"
+      },
+      
+      errorhappened: false
+      
+    }
+
+    this.verify = this.verify.bind(this)
     
   }
 
+  verify(e) {
+    e.preventDefault();
+    this.setState({
+      errorhappened:false
+    })
+    
+    if (this.state.correctUser[this.props.username] &&this.state.correctUser[this.props.username] === this.props.password) {
+      return this.props.handleClick();
+    }
+    
+    this.setState({
+      errorhappened:true
+    })
+    
+  }
+
+
   render() {
+    
     return (
       <div className="login">
         <main>
             <img src={Logo} width="200" height="200" alt="osatlogo"/>
             
+            <form className="LogInBox" onSubmit={this.verify}>
             
-            <form className="LogInBox" onSubmit={this.props.handleClick}>
               <div className="LogInInfo">
                   Log in using university email ID
               </div>
+
+
+              {
+                this.state.errorhappened?<div  className="error">
+              Try again
+              </div>:null
+              }
+
+              
                   
               <div className="username">
                   Username: 
                   <input
                   type="text"
                   className="searchbar"
-                  placeholder=""
+                  placeholder="username"
                   value={this.props.username}
                   onChange={this.props.handleUsername}
                   />
@@ -39,7 +75,7 @@ class LogInScreen extends Component {
                   <input
                   type="password"
                   className="searchbar"
-                  placeholder=""
+                  placeholder="password"
                   value={this.props.password}
                   onChange={this.props.handlePassword}
                   />
@@ -50,6 +86,7 @@ class LogInScreen extends Component {
                 </button>
               </div>
             </form>
+            
         </main>
       </div>
     );
