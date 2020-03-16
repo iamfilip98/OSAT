@@ -12,12 +12,10 @@ class Message extends React.Component {
       <div className="login">
         <main>
             <div className="box">
-                Do you prefer to study at night or during the day?
+                Message!
             </div>
             
-
-            <button className="quizbutton" onClick={this.props.handleClick}>Night</button>
-            <button className="quizbutton" >Day</button>
+            
         </main>
       </div>
     );

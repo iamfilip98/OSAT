@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import LogInScreen from './LogInScreen';
 import MainScreen from './MainScreen';
 import QuizScreen from './QuizScreen';
+import Message from './Message';
 
 
 

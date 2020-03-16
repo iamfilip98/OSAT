@@ -17,7 +17,7 @@ class Question1 extends React.Component {
             
 
             <button className="quizbutton" onClick={this.props.handleClick}>Night</button>
-            <button className="quizbutton" onClick={this.props.handleClick}>Day</button>
+            <button className="quizbutton" >Day</button>
         </main>
       </div>
     );
