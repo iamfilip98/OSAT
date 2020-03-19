@@ -8,7 +8,6 @@ class LogInScreen extends Component {
 
     constructor(props) {
         super(props);
-        
     }
 
 

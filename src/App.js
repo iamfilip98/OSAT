@@ -9,7 +9,10 @@ class App extends Component {
 
   constructor(props){
     super(props);
-    this.state={ loginscreen: true, mainscreen: false };
+    this.state = { 
+      loginscreen: true, 
+      mainscreen: false 
+    };
     this.changeScreen=this.changeScreen.bind(this);
 
   }
