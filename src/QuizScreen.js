@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Question1 from './Question1';
 import Question2 from './Question2';
 import Question3 from './Question3';
+import Owl from './assets/barn-owl-night.webp';
 
 class QuizScreen extends React.Component {
   constructor(props) {
@@ -41,13 +42,25 @@ class QuizScreen extends React.Component {
       <div className="login">
         <main>
             <div className="box">
-                <b>QUIZ</b>
+                <b>Personality type</b>
             
             {this.state.question1 ? <Question1 handleClick={this.q2}/> : null }
             {this.state.question2 ? <Question2 handleClick={this.q3}/> : null }
             {this.state.question3 ? <Question3 handleClick={this.showresult}/> : null }
 
-            {this.state.result ? <div>You are a <b>Night Owl!</b></div> : null }
+            {this.state.result ? 
+              <div>
+                You are a <b>Night Owl!</b>
+                <br></br>
+                <img src = {Owl} width="300" height="200" alt="night-owl"/>
+                <button onClick = {this.props.goToLandingPage}>Continue</button>
+              </div> 
+
+
+            
+            
+            
+            : null }
             
             </div>
             
