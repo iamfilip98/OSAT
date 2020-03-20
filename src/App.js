@@ -3,7 +3,9 @@ import LogInScreen from './LogInScreen';
 import MainScreen from './MainScreen';
 import QuizScreen from './QuizScreen';
 import Message from './Message';
+
 import LandingPage from './In-App-Pages/LandingPage';
+
 
 
 
@@ -18,7 +20,9 @@ class App extends Component {
       mainscreen: false, 
       welcomescreen: false,
       quizscreen: false,
+
       landingPage: false,
+
       username : "",
       password : ""
       
@@ -62,9 +66,35 @@ class App extends Component {
    
   }
 
+
   goToLandingPage = (e) =>{
     this.setState({ quizscreen : false})
     this.setState({ landingPage : true})
+
+  changeScreenQuiz = (e) =>{
+    
+    this.setState({ mainscreen: false });
+    this.setState({ quizscreen: true });
+   
+  }
+
+  handleUsername = (e) => {
+    this.setState(
+      {username: e.target.value}
+    )
+  }
+
+  handlePassword = (e) => {
+    this.setState(
+      {password: e.target.value}
+    )
+  }
+
+  handleLogIn = (e) =>{
+    
+    this.setState({ isLoggedIn: true });
+
+
   }
 
   render() {
@@ -78,9 +108,13 @@ class App extends Component {
 
             {this.state.mainscreen ? <MainScreen username={this.state.username} handleClick={this.changeScreenQuiz} /> : null }
 
+
             {this.state.quizscreen ? <QuizScreen username={this.state.username} goToLandingPage={this.goToLandingPage} /> : null }
 
             {this.state.landingPage ? <LandingPage username={this.state.username} />: null }
+
+            {this.state.quizscreen ? <QuizScreen username={this.state.username}/> : null }
+
 
           </div>
           
