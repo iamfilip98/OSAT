@@ -26,8 +26,6 @@ code {
 .LogInBox{
   margin: 25px;
   border-radius: 15px 15px 15px 15px;
-  
- 
   background-color: rgb(255, 233, 205);
 }
 
@@ -39,14 +37,7 @@ code {
 }
 
 
-.Header{
-  padding: 20px;
-  
-  
-  font-size: 200%;
-  font-weight: bold;
-  color: rgb(34, 34, 187);
-}
+
 
 .buttonbox{
  
@@ -54,7 +45,7 @@ code {
 }
 
 
-.LogInButton{
+.Button{
   border-radius: 5px 5px 5px 5px;
   font-weight: bold;
   font-size: 75%;
@@ -73,4 +64,26 @@ code {
 .username{
   padding: 5px;
   margin: 5px;
+}
+
+.box{
+  margin: 25px;
+  padding: 15px;
+  border-radius: 15px 15px 15px 15px;
+  background-color: rgb(255, 233, 205);
+}
+
+.quizbutton{
+  border-radius: 5px 5px 5px 5px;
+  font-weight: bold;
+  font-size: 75%;
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  color: white;
+  background-color: rgb(36, 127, 247);
+}
+
+.error{
+  color: red;
 }

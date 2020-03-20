@@ -1,51 +1,95 @@
 import React, {Component} from 'react';
 import Logo from "./assets/OSAT.png";
-import Validate from './Validate';
-
 
 
 class LogInScreen extends Component {
 
-    constructor(props) {
-        super(props);
+
+  constructor(props) {
+    super(props);
+    this.state={
+      correctUser: {
+        "John":"1234",
+        "Tim":"pass",
+        "Lennard":"bow"
+      },
+      
+      errorhappened: false
+      
     }
+
+    this.verify = this.verify.bind(this)
+    
+  }
+
+  verify(e) {
+    e.preventDefault();
+    //####################################//
+    //DO YOU NEED THE BELOW CODE?
+    // this.setState({
+    //   errorhappened:false
+    // })
+    //#######################################
+    
+    
+    if (this.state.correctUser[this.props.username] && this.state.correctUser[this.props.username] === this.props.password) {
+      this.props.handleClick();
+    }
+    
+    this.setState({
+      errorhappened:true
+    })
+    
+  }
 
 
   render() {
+    
     return (
       <div className="login">
         <main>
             <img src={Logo} width="200" height="200" alt="osatlogo"/>
             
+            <form className="LogInBox" onSubmit={this.verify}>
             
-            <form className="LogInBox">
-            <div className="LogInInfo">
-                Log in using univeristy email ID
-            </div>
-                
-            <div className="username">
-                Username: 
-                <input
-                type="text"
-                className="searchbar"
-                placeholder=""
-                />
-            </div>
-            <div className="password">
-                Password: 
-                <input
-                type="text"
-                className="searchbar"
-                placeholder=""
-                />
-            </div>
-            <div className="buttonbox">
-            {/* <button className="LogInButton" onClick={this.props.handleClick}> */}
-            <button className="LogInButton" onClick={this.Validate} onClick={this.props.handleClick}>
-                Login >
-            </button>
-            </div>
+              <div className="LogInInfo">
+                  Log in using university email ID
+              </div>
+
+
+              {
+                this.state.errorhappened?<div  className="error">
+              Try again
+              </div>:null
+              }
+  
+              <div className="username">
+                  Username: 
+                  <input
+                  type="text"
+                  className="searchbar"
+                  placeholder="username"
+                  value={this.props.username}
+                  onChange={this.props.handleUsername}
+                  />
+              </div>
+              <div className="password">
+                  Password: 
+                  <input
+                  type="password"
+                  className="searchbar"
+                  placeholder="password"
+                  value={this.props.password}
+                  onChange={this.props.handlePassword}
+                  />
+              </div>
+              <div className="buttonbox">
+                <button  className="Button">
+                    Login >
+                </button>
+              </div>
             </form>
+            
         </main>
       </div>
     );
