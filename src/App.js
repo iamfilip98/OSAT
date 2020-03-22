@@ -3,7 +3,7 @@ import LogInScreen from './LogInScreen';
 import MainScreen from './MainScreen';
 import QuizScreen from './QuizScreen';
 import Message from './Message';
-
+import LandingPage from './In-App-Pages/LandingPage';
 
 
 
@@ -17,11 +17,10 @@ class App extends Component {
       mainscreen: false, 
       welcomescreen: false,
       quizscreen: false,
+      landingPage: false,
       username : "",
       password : ""
       
-    
-
     };
     // this.changeScreen=this.changeScreen.bind(this);
     this.changeScreenQuiz=this.changeScreenQuiz.bind(this);
@@ -61,6 +60,11 @@ class App extends Component {
 
   }
 
+  goToLandingPage = (e) =>{
+    this.setState({ quizscreen : false})
+    this.setState({ landingPage : true})
+  }
+
   render() {
     return (
       <div className="app">
@@ -71,7 +75,9 @@ class App extends Component {
 
             {this.state.mainscreen ? <MainScreen username={this.state.username} handleClick={this.changeScreenQuiz} /> : null }
 
-            {this.state.quizscreen ? <QuizScreen username={this.state.username}/> : null }
+            {this.state.quizscreen ? <QuizScreen username={this.state.username} goToLandingPage = {this.goToLandingPage}/> : null }
+
+            {this.state.landingPage ? <LandingPage username={this.state.username}  />: null }
 
           </div>
           
