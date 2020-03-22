@@ -6,7 +6,11 @@ import Message from './Message';
 import LandingPage from './In-App-Pages/LandingPage';
 
 
+<<<<<<< HEAD
 //Added some more comments in masterBranch
+=======
+//More work on davidBranch
+>>>>>>> Added test-Comment
 
 
 class App extends Component {
@@ -92,6 +96,7 @@ class App extends Component {
   }
 
   render(){
+    
     return (
       <div className="App">
       
