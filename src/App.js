@@ -3,7 +3,6 @@ import LogInScreen from './LogInScreen';
 import MainScreen from './MainScreen';
 import QuizScreen from './QuizScreen';
 import Message from './Message';
-
 import LandingPage from './In-App-Pages/LandingPage';
 
 
@@ -20,22 +19,16 @@ class App extends Component {
       mainscreen: false, 
       welcomescreen: false,
       quizscreen: false,
-
       landingPage: false,
-
       username : "",
       password : ""
-      
-    
+    }
 
-    };
-    // this.changeScreen=this.changeScreen.bind(this);
+    this.changeScreen=this.changeScreen.bind(this);
     this.changeScreenQuiz=this.changeScreenQuiz.bind(this);
-    
-
   }
 
-  changeScreen = (e) =>{
+  changeScreen = (e) => {
     
     this.setState({ loginscreen: false });
     this.setState({ mainscreen: true });
@@ -44,13 +37,13 @@ class App extends Component {
   handleUsername = (e) => {
     this.setState(
       {username: e.target.value}
-    )
+    );
   }
 
   handlePassword = (e) => {
     this.setState(
       {password: e.target.value}
-    )
+    );
   }
 
   handleLogIn = (e) =>{
@@ -68,8 +61,9 @@ class App extends Component {
 
 
   goToLandingPage = (e) =>{
-    this.setState({ quizscreen : false})
-    this.setState({ landingPage : true})
+    this.setState({ quizscreen : false});
+    this.setState({ landingPage : true});
+  }
 
   changeScreenQuiz = (e) =>{
     
@@ -81,25 +75,25 @@ class App extends Component {
   handleUsername = (e) => {
     this.setState(
       {username: e.target.value}
-    )
+    );
   }
 
   handlePassword = (e) => {
     this.setState(
       {password: e.target.value}
-    )
+    );
   }
 
   handleLogIn = (e) =>{
     
-    this.setState({ isLoggedIn: true });
-
-
+    this.setState(
+      { isLoggedIn: true }
+    );
   }
 
-  render() {
+  render(){
     return (
-      <div className="app">
+      <div className="App">
       
         <main>
           <div> 
@@ -113,7 +107,7 @@ class App extends Component {
 
             {this.state.landingPage ? <LandingPage username={this.state.username} />: null }
 
-            {this.state.quizscreen ? <QuizScreen username={this.state.username}/> : null }
+            {this.state.quizscreen ? <QuizScreen username={this.state.username} /> : null }
 
 
           </div>

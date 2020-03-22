@@ -1,16 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Navbar from './Navbar';
+import Home from './Home';
+
 
 class LandingPage extends Component {
     constructor(props){
         super(props);
     
-        this.state={ 
+        this.state = { 
             homepage: true,
             calendar: false,
             library: false,
             settings: false
-      }
-
+        }
+    }
 
 
     render() {
@@ -20,8 +23,8 @@ class LandingPage extends Component {
                 <Navbar/>
                 {this.state.homepage ? <Home/> : null}
             </div>
-        )
+        );
     }
 }
 
-export default LandingPage
+export default LandingPage;

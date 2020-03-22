@@ -23,15 +23,23 @@ code {
 	margin: 0 auto;
 }
 
+.Logo{
+  display: block;
+  margin-left: 550px;
+  margin-right: auto;
+  width: 50%;
+}
+
 .LogInBox{
-  margin: 25px;
+  margin-left: 500px;
+  margin-right: 500px;
   border-radius: 15px 15px 15px 15px;
   background-color: rgb(255, 233, 205);
 }
 
 .LogInInfo{
   font-weight: bold;
-  padding: 10px;
+  padding: 35px;
   padding-top: 15px;
   margin: 5px;
 }
@@ -42,6 +50,8 @@ code {
 .buttonbox{
  
   padding-bottom: 10px;
+  position: relative;
+  left: 120px;
 }
 
 
@@ -59,15 +69,19 @@ code {
 .password{
   padding: 5px;
   margin: 5px;
+  position: relative;
+  left: 50px;
 }
 
 .username{
   padding: 5px;
   margin: 5px;
+  position: relative;
+  left: 50px;
 }
 
 .box{
-  margin: 25px;
+  margin: 100px;
   padding: 15px;
   border-radius: 15px 15px 15px 15px;
   background-color: rgb(255, 233, 205);
