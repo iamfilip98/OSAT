@@ -6,8 +6,6 @@ import Message from './Message';
 import LandingPage from './In-App-Pages/LandingPage';
 
 
-//test-comment
-
 
 class App extends Component {
 
