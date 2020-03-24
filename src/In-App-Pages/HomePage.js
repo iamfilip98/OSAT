@@ -14,7 +14,7 @@ import './HomePage.css';
 
 const Home = () => <span>Home</span>;
 
-// const Calendar = () => <span>Calendar</span>;
+const Calendar = () => <span>Calendar</span>;
 
 const Settings = () => <span>Settings</span>;
 
@@ -22,13 +22,14 @@ const Settings = () => <span>Settings</span>;
 class HomePage extends Component {
     constructor(props){
         super(props);
-    
+
     //     this.state={ 
     //         homepage: true,
     //         calendar: false,
     //         library: false,
     //         settings: false
     //   }
+    // test
     }
 
     // const Home = () => {<span>Home</span>};
@@ -48,10 +49,10 @@ class HomePage extends Component {
                     <Jumbotron>
                         <h1 className = 'header'>Welcome To React-Bootstrap</h1>
                         <h2>
-                            Current Page is
+                            Current Page is{' '}
                             <Switch>
                                 <Route path="/calendar">
-                                    <span>Calendar</span>
+                                    <Calendar />
                                 </Route>
                                 <Route path="/settings">
                                     <Settings />
