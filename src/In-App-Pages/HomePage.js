@@ -10,9 +10,7 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import { LinkContainer } from 'react-router-bootstrap';
-import './HomePage.scss';
-
-
+import './HomePage.css';
 
 const Home = () => <span>Home</span>;
 
@@ -46,7 +44,6 @@ class HomePage extends Component {
 
     render() {
         return (
-            
             <MemoryRouter>
                 <Container className="p-4">
                     <Jumbotron>
@@ -54,23 +51,24 @@ class HomePage extends Component {
                         <h2>
                             Current Page is{' '}
                             <Switch>
-                                <Route path="/calendar">
+                                <Route exact path="/">
+                                    <Home />
+                                </Route> 
+                                <Route exact path="/calendar">
                                     <Calendar />
                                 </Route>
-                                <Route path="/settings">
+                                <Route exact path="/settings">
                                     <Settings />
                                 </Route>
-                                <Route path="/">
-                                    <Home />
+                                <Route exact path="/library">
+                                    <span>Library</span>
                                 </Route>
+                                   
                             </Switch>
                         </h2>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
+
                         <h2>
-                            
+                            Navigate to{' '}
                             <ButtonToolbar className="custom-btn-toolbar">
                                 <LinkContainer to="/">
                                     <Button>Home</Button>
@@ -78,11 +76,11 @@ class HomePage extends Component {
                                 <LinkContainer to="/calendar">
                                     <Button>Calendar</Button>
                                 </LinkContainer>
-                                <LinkContainer to="/library">
-                                    <Button>Library</Button>
-                                </LinkContainer>
                                 <LinkContainer to="/settings">
                                     <Button>Settings</Button>
+                                </LinkContainer>
+                                <LinkContainer to="/library">
+                                    <Button>Library</Button>
                                 </LinkContainer>
                             </ButtonToolbar>
                         </h2>

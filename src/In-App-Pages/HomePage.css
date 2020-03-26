@@ -1,0 +1,17 @@
+.header {
+  text-align: center;
+  background-color: #69da55;
+}
+
+.toast {
+  margin: 0 auto;
+}
+
+.custom-btn-toolbar {
+  display: inline !important;
+}
+
+.custom-btn-toolbar > .btn {
+  margin-right: 0.5rem;
+}
+/*# sourceMappingURL=HomePage.css.map */
