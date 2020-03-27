@@ -17,18 +17,38 @@ code {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: whitesmoke;
+  background-color: rgba(230, 223, 164, 0.74);
   width: 414px;
-  height: 736px;
+  height: 700px;
   text-align: center;
-  padding-top: 80px;
+  padding-top: 0px;
   margin: 0 auto;
+  border-radius: 15px 15px 15px 15px;
+  border-color: rgb(0, 0, 0);
+  border-style: solid;
+  position: relative;
+}
+
+.login{
+  margin-top: 60px;
+}
+
+
+.myNavbar {
+    position: absolute;
+    bottom:24px;
+    left: 12px;
+}
+
+.btn {
+  margin-right: 1.2rem;
 }
 
 .LogInBox {
-  margin: 25px;
+
+  margin: 30px;
   border-radius: 15px 15px 15px 15px;
-  background-color: #ffe9cd;
+  background-color: #f0c185;
 }
 
 .LogInInfo {

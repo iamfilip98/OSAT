@@ -7,6 +7,8 @@ import HomePage from './In-App-Pages/HomePage';
 
 
 
+
+
 class App extends Component {
 
   constructor(props){
@@ -68,21 +70,15 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <main>
-          <div> 
-                      
-            {this.state.loginscreen ? <LogInScreen handleUsername={this.handleUsername} handlePassword={this.handlePassword} handleClick={this.changeScreen} username={this.state.username} password={this.state.password} /> : null }
+                     
+        {this.state.loginscreen ? <LogInScreen handleUsername={this.handleUsername} handlePassword={this.handlePassword} handleClick={this.changeScreen} username={this.state.username} password={this.state.password} /> : null }
 
-            {this.state.mainscreen ? <MainScreen username={this.state.username} handleClick={this.changeScreenQuiz} /> : null }
+        {this.state.mainscreen ? <MainScreen username={this.state.username} handleClick={this.changeScreenQuiz} /> : null }
 
-            {this.state.quizscreen ? <QuizScreen username={this.state.username} goToHomePage = {this.goToHomePage}/> : null }
+        {this.state.quizscreen ? <QuizScreen username={this.state.username} goToHomePage = {this.goToHomePage}/> : null }
 
-            {this.state.homePage ? <HomePage username={this.state.username}  />: null }
+        {this.state.homePage ? <HomePage username={this.state.username}  />: null }
 
-          </div>
-          
-        </main>
-        
       </div>
     );
   }

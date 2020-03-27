@@ -1,0 +1,22 @@
+$theme-colors: (
+    "primary": purple 
+);
+
+
+
+$border-radius: 10rem;
+
+@mixin centerFunction{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+
+
+
+
+
+
+
+@import "./bootstrap/bootstrap";

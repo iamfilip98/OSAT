@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Logo from "./assets/OSAT.png";
-
+import './index.css';
 
 class LogInScreen extends Component {
 
@@ -47,7 +47,7 @@ class LogInScreen extends Component {
     
     return (
       <div className="login">
-        <main>
+        
             <img src={Logo} width="200" height="200" alt="osatlogo"/>
             
             <form className="LogInBox" onSubmit={this.verify}>
@@ -90,7 +90,7 @@ class LogInScreen extends Component {
               </div>
             </form>
             
-        </main>
+        
       </div>
     );
   }
