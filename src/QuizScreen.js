@@ -37,7 +37,12 @@ class QuizScreen extends React.Component {
     this.setState({ result: true });
   }
 
+  consoleIt = () => {
+    console.log("button clicked");
+  }
+
   render() {
+    
     return (
       <div className="login">
         <main>

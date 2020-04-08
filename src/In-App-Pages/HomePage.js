@@ -12,8 +12,10 @@ import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import { LinkContainer } from 'react-router-bootstrap';
 import '../scss/main.scss';
 import calendar from '../assets/calendar.jpeg';
+import Home from './Home';
 
-const Home = () => <span>Home</span>;
+//const Home = () => <Home/>;
+
 
 const Calendar = () => <img src = {calendar} height = '200' width = '300'/>;
 
@@ -27,47 +29,86 @@ class HomePage extends Component {
     }
 
     render() {
+        console.log("reached homepage!");
         return (
-            
-                <MemoryRouter>
-                            <h1 className = 'header'>Welcome To React-Bootstrap</h1>
-                            <h2>
-                                Current Page is{' '}
-                                <Switch>
-                                    <Route exact path="/">
-                                        <Home />
-                                    </Route> 
-                                    <Route exact path="/calendar">
-                                        <Calendar />
-                                    </Route>
-                                    <Route exact path="/settings">
-                                        <Settings />
-                                    </Route>
-                                    <Route exact path="/library">
-                                        <span>Library</span>
-                                    </Route>
-                                    
-                                </Switch>
-                            </h2>
+         
 
-                            <h2 className="myNavbar">
+            // <MemoryRouter>
+            //     <Container className="p-4">
+            //         <Jumbotron>
+            //             <h1 className = 'header'>Welcome To React-Bootstrap</h1>
+            //             <h2>
+            //                 Current Page is{' '}
+            //                 <Switch>
+            //                     <Route path="/calendar">
+            //                         <Calendar />
+            //                     </Route>
+            //                     <Route path="/settings">
+            //                         <Settings />
+            //                     </Route>
+            //                     <Route path="/">
+            //                         <Home />
+            //                     </Route>
+            //                 </Switch>
+            //             </h2>
+
+            //             <h2>
+            //                 Navigate to{' '}
+            //                 <ButtonToolbar className="custom-btn-toolbar">
+            //                     <LinkContainer to="/">
+            //                         <Button>Home</Button>
+            //                     </LinkContainer>
+            //                     <LinkContainer to="/calendar">
+            //                         <Button>Calendar</Button>
+            //                     </LinkContainer>
+            //                     <LinkContainer to="/settings">
+            //                         <Button>Settings</Button>
+            //                     </LinkContainer>
+            //                 </ButtonToolbar>
+            //             </h2>
+            //         </Jumbotron>
+            //     </Container>
+            // </MemoryRouter>
+            
+            <MemoryRouter>
+                        <h1 className = 'header'>Welcome To React-Bootstrap</h1>
+                        <h2>
+                            Current Page is{' '}
+                            <Switch>
+                                <Route exact path="/">
+                                    <Home />
+                                </Route> 
+                                <Route exact path="/calendar">
+                                    <Calendar />
+                                </Route>
+                                <Route exact path="/settings">
+                                    <Settings />
+                                </Route>
+                                <Route exact path="/library">
+                                    <span>Library</span>
+                                </Route>
                                 
-                                <ButtonToolbar>
-                                    <LinkContainer to="/">
-                                        <Button>Home</Button>
-                                    </LinkContainer>
-                                    <LinkContainer to="/calendar">
-                                        <Button>Calendar</Button>
-                                    </LinkContainer>
-                                    <LinkContainer to="/settings">
-                                        <Button>Settings</Button>
-                                    </LinkContainer>
-                                    <LinkContainer to="/library">
-                                        <Button>Library</Button>
-                                    </LinkContainer>
-                                </ButtonToolbar>
-                            </h2>
-                </MemoryRouter>
+                            </Switch>
+                        </h2>
+
+                        <h2 className="myNavbar">
+                            
+                            <ButtonToolbar>
+                                <LinkContainer to="/">
+                                    <Button>Home</Button>
+                                </LinkContainer>
+                                <LinkContainer to="/calendar">
+                                    <Button>Calendar</Button>
+                                </LinkContainer>
+                                <LinkContainer to="/settings">
+                                    <Button>Settings</Button>
+                                </LinkContainer>
+                                <LinkContainer to="/library">
+                                    <Button>Library</Button>
+                                </LinkContainer>
+                            </ButtonToolbar>
+                        </h2>
+            </MemoryRouter>
            
             
          );

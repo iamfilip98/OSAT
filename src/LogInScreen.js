@@ -32,6 +32,7 @@ class LogInScreen extends Component {
     //#######################################
     
     
+    
     if (this.state.correctUser[this.props.username] && this.state.correctUser[this.props.username] === this.props.password) {
       this.props.handleClick();
     }

@@ -47,13 +47,13 @@ class App extends Component {
   handleUsername = (e) => {
     this.setState(
       {username: e.target.value}
-    )
+    );
   }
 
   handlePassword = (e) => {
     this.setState(
       {password: e.target.value}
-    )
+    );
   }
 
   handleLogIn = (e) =>{
@@ -63,14 +63,17 @@ class App extends Component {
   }
 
   goToHomePage = (e) =>{
-    this.setState({ quizscreen : false})
-    this.setState({ homePage : true})
+     //console.log("reached App.js function");
+     this.setState({ quizscreen : false});
+     this.setState({ homePage : true});
+   
   }
 
   render() {
     return (
       <div className="app">
-                     
+        
+             
         {this.state.loginscreen ? <LogInScreen handleUsername={this.handleUsername} handlePassword={this.handlePassword} handleClick={this.changeScreen} username={this.state.username} password={this.state.password} /> : null }
 
         {this.state.mainscreen ? <MainScreen username={this.state.username} handleClick={this.changeScreenQuiz} /> : null }

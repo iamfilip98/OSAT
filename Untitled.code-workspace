@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "weather-app",
+			"path": "/Users/davidvonhuth/computerScience/2nd Year/GUI (Graphical User Interfaces)/github/weather-app"
+		},
+		{
+			"path": "/Users/davidvonhuth/computerScience/2nd Year/react_practice/todo-list"
+		},
+		{
+			"path": "src"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "src"
+	}
+}
