@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Logo from "./assets/OSAT.png";
-import './index.css';
+import './scss/main.scss';
 
 class LogInScreen extends Component {
 

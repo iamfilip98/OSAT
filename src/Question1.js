@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './scss/main.scss';
 
 class Question1 extends React.Component {
   constructor(props) {

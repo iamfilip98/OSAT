@@ -3,6 +3,7 @@ import Question1 from './Question1';
 import Question2 from './Question2';
 import Question3 from './Question3';
 import Owl from './assets/barn-owl-night.webp';
+import './scss/main.scss';
 
 class QuizScreen extends React.Component {
   constructor(props) {
