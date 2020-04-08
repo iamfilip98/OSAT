@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Logo from "./assets/OSAT.png";
-
+import './scss/main.scss';
 
 class LogInScreen extends Component {
 
@@ -32,6 +32,7 @@ class LogInScreen extends Component {
     //#######################################
     
     
+    
     if (this.state.correctUser[this.props.username] && this.state.correctUser[this.props.username] === this.props.password) {
       this.props.handleClick();
     }
@@ -47,7 +48,7 @@ class LogInScreen extends Component {
     
     return (
       <div className="login">
-        <main>
+        
             <img src={Logo} width="200" height="200" alt="osatlogo"/>
             
             <form className="LogInBox" onSubmit={this.verify}>
@@ -90,7 +91,7 @@ class LogInScreen extends Component {
               </div>
             </form>
             
-        </main>
+        
       </div>
     );
   }

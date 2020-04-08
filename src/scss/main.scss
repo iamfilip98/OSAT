@@ -1,0 +1,135 @@
+//*********************  INDEX  ***************************************************
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
+code {
+font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+
+//*********************  APP  ****************************************************** 
+.app {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: rgba(230, 223, 164, 0.74);
+    width: 414px;
+    height: 700px;
+    text-align: center;
+    padding-top: 0px;
+    margin: 0 auto;
+    border-radius: 15px 15px 15px 15px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    position: relative;
+    background-color: rgb(142, 224, 204);
+}
+.test:hover{
+    background-color: rgb(144, 195, 49);
+}
+
+//*********************  LOGIN-SCREEN  *********************************************
+.login{
+    margin-top: 60px;
+}
+  
+.LogInBox {
+
+margin: 30px;
+border-radius: 15px 15px 15px 15px;
+background-color: #f0c185;
+}
+
+.LogInInfo {
+font-weight: bold;
+padding: 10px;
+padding-top: 15px;
+margin: 5px;
+}
+
+.buttonbox {
+padding-bottom: 10px;
+}
+
+.Button {
+border-radius: 5px 5px 5px 5px;
+font-weight: bold;
+font-size: 75%;
+padding: 10px;
+margin: 5px;
+text-align: center;
+color: white;
+background-color: #2222bb;
+}
+
+.password {
+padding: 5px;
+margin: 5px;
+}
+
+.username {
+padding: 5px;
+margin: 5px;
+}
+
+.error {
+color: red;
+}
+
+//*********************  WELCOME-SCREEN  *******************************************
+.box {
+    margin: 25px;
+    padding: 15px;
+    border-radius: 15px 15px 15px 15px;
+    background-color: #ffe9cd;
+}
+
+//*********************  QUESTION-1/2/3  ********************************************
+.quizbutton {
+    border-radius: 5px 5px 5px 5px;
+    font-weight: bold;
+    font-size: 75%;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    color: white;
+    background-color: #247ff7;
+}
+
+//*********************  HOMEPAGE  *************************************************
+.header {
+    text-align: center;
+}
+
+
+
+
+.myNavbar {
+    position: absolute;
+    bottom:40px;
+    left: 12px;
+    $theme-colors: ("primary": purple );
+}
+
+
+
+.homepage-btn-toolbar > .btn {
+    margin-right: 1.3rem;
+    border-radius: 10rem;
+    background-color: rgb(153, 0, 255);
+}
+
+
+
+//*********************************************************************************
+@import "./bootstrap/bootstrap";
+
+

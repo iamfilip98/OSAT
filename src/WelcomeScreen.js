@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
+import './scss/main.scss';
 
-class MainScreen extends React.Component {
+class WelcomeScreen extends React.Component {
   constructor(props) {
       super(props);
   }
@@ -33,4 +34,4 @@ class MainScreen extends React.Component {
   }
 }
 
-export default MainScreen;
+export default WelcomeScreen;
