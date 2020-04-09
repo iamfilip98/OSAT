@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar';
 import {BrowserRouter as Router, Link, NavLink} from 'react-router-dom';
 // import Route from 'react-router-dom/Route';
 //___________________________________________________________________
@@ -10,17 +9,14 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import { LinkContainer } from 'react-router-bootstrap';
-import calendar from '../assets/calendar.jpeg';
+import Calendar from './Calendar';
 import Home from './Home';
+import Settings from './Settings';
+import settings_icon from '../assets/settings-icon.png';
 import '../scss/main.scss';
 
 
-//const Home = () => <Home/>;
 
-
-const Calendar = () => <img src = {calendar} height = '200' width = '300'/>;
-
-const Settings = () => <span>Settings</span>;
 
 
 class HomePage extends Component {
@@ -29,13 +25,11 @@ class HomePage extends Component {
     }
 
     render() {
+        
         return (
-         
-
             <MemoryRouter>
                 <h1 className = 'header'>Welcome to OSAT!</h1>
                 <h2>
-                    Current Page is{' '}
                     <Switch>
                         <Route exact path="/">
                             <Home />
@@ -64,14 +58,14 @@ class HomePage extends Component {
                             <Button>Library</Button>
                         </LinkContainer>
                         <LinkContainer to="/settings">
-                            <Button>Settings</Button>
+                            <img src = {settings_icon} width='30' height='30'/>
                         </LinkContainer>
                     </ButtonToolbar>
                 </h2>
                 </MemoryRouter>
 
 
-
+           
 
             // <MemoryRouter>
             //     <Container className="p-4">
