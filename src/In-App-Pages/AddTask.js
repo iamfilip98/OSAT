@@ -12,8 +12,12 @@ class AddTask extends Component {
 
     display(){
         var taskArray = [];
-        if(this.state.taskArray.length > 0){
-            taskArray = JSON.parse(localStorage.getItem('taskArray'));
+
+        taskArray = JSON.parse(localStorage.getItem('taskArray'));
+
+        if(taskArray){
+            console.log("Local Storage array has elements in it!");
+            // taskArray = JSON.parse(localStorage.getItem('taskArray'));
         }else{
             taskArray = this.state.taskArray;
         }
@@ -22,9 +26,9 @@ class AddTask extends Component {
             <div>
                 <ul>
                     {
-                        taskArray.map((ind_task) => {
+                        taskArray.map((task) => {
                             return(
-                            <li>{ind_task}</li>
+                            <li>{task}</li>
                             ); 
                         })
                     }
@@ -38,9 +42,22 @@ class AddTask extends Component {
 
         
         const newTask = this.state.task;
-        const newArray = [...this.state.taskArray, newTask];
-        this.setState({ taskArray : newArray})
-        
+
+
+
+        var newArray = [];
+
+        newArray = JSON.parse(localStorage.getItem('taskArray'));
+
+        if(newArray){
+            console.log("Success!");
+            // taskArray = JSON.parse(localStorage.getItem('taskArray'));
+        }else{
+            newArray = this.state.taskArray;
+        }
+
+        newArray = [...newArray, newTask];
+        this.setState({ taskArray : newArray});
         localStorage.setItem('taskArray', JSON.stringify(newArray));
 
     };
