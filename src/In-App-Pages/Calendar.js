@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { format, addMonths, subMonths, startOfWeek, endOfWeek, addDays, startOfMonth, endOfMonth, isSameMonth, isSameDay, parse } from 'date-fns';
 import './Calendar.scss';
+import AddTask from './AddTask';
+import { LinkContainer } from 'react-router-bootstrap';
 
 class Calendar extends React.Component {
 
@@ -72,19 +74,22 @@ class Calendar extends React.Component {
                 formattedDate = format(day, dateFormat); //29
                 const cloneDay = day;//29 march, 2020...
                 days.push(
-                    <div
-                        className={`col cell ${!isSameMonth(day, monthStart)? "disabled":
-                         isSameDay(day, selectedDate) ? "selected" :
-                         isSameDay(day, new Date())? "today":
-                         "" }`}
-                        key={day}
-                        onClick={() => this.onDateClick(cloneDay)}
-                    >
+                    <LinkContainer to = '/addtask'>
+                        <div
+                            className={`col cell ${!isSameMonth(day, monthStart)? "disabled":
+                            isSameDay(day, selectedDate) ? "selected" :
+                            isSameDay(day, new Date())? "today":
+                            "" }`}
+                            key={day}
+                        >
+                        {/* this.onDateClick(cloneDay) */}
+                        
+                                <span className="number">{formattedDate}</span>
+                                <span className="bg">{formattedDate}</span>
+                            
 
-                        <span className="number">{formattedDate}</span>
-                        <span className="bg">{formattedDate}</span>
-
-                    </div>
+                        </div>
+                    </LinkContainer>
                 );
                 day = addDays(day, 1);
             }
@@ -98,6 +103,14 @@ class Calendar extends React.Component {
         return <div className="body">{rows}</div>;
         
     }
+
+    // goToAddTask = () => {
+    //     console.log("reached function!");
+    //     return(<AddTask />);
+    // }
+
+    
+
 
     onDateClick = (day) => {
         this.setState({

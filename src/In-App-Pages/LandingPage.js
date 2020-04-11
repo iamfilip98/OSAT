@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Link, NavLink} from 'react-router-dom';
-// import Route from 'react-router-dom/Route';
-//___________________________________________________________________
-import { MemoryRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 //import 'bootstrap/dist/css/bootstrap.min.css';
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -15,6 +10,7 @@ import Settings from './Settings';
 import Library from './Library';
 import settings_icon from '../assets/settings-icon.png';
 import '../scss/main.scss';
+import AddTask from './AddTask';
 
 
 
@@ -34,25 +30,22 @@ class LandingPage extends Component {
     //     //this.setState(!this.state.display);
     // }
 
+    goToAddTask(){
+        
+    }
+
     render() {
         
         return (
-            <MemoryRouter>
+            <Router>
                 <h1 className = 'header'>Welcome to OSAT!</h1>
                 <h2>
                     <Switch>
-                        <Route exact path="/">
-                            <HomePage />
-                        </Route> 
-                        <Route exact path="/calendar">
-                            <Calendar changeDisplay = {this.changeDisplay} />
-                        </Route>
-                        <Route exact path="/settings">
-                            <Settings />
-                        </Route>
-                        <Route exact path="/library">
-                            <Library />
-                        </Route>  
+                        <Route exact path="/" component={HomePage}/>
+                        <Route exact path="/calendar" component={Calendar}/>
+                        <Route exact path="/settings" component={Settings}/>
+                        <Route exact path="/library" component={Library}/>
+                        <Route exact path="/addtask" component={AddTask}/>
                     </Switch>
                 </h2>
 
@@ -72,12 +65,12 @@ class LandingPage extends Component {
                         </LinkContainer>
                     </ButtonToolbar>
                 </h2>
-                </MemoryRouter>
+            </Router>
 
 
            
 
-            // <MemoryRouter>
+            // <Router>
             //     <Container className="p-4">
             //         <Jumbotron>
             //             <h1 className = 'header'>Welcome To React-Bootstrap</h1>
@@ -112,7 +105,7 @@ class LandingPage extends Component {
             //             </h2>
             //         </Jumbotron>
             //     </Container>
-            // </MemoryRouter>
+            // </Router>
             
            
            
