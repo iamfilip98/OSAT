@@ -10,9 +10,14 @@ class AddTask extends Component {
      
 
     display(){
+        const { params: { dateObject } } = this.props.match;//*************** */
+        var date = JSON.stringify(dateObject);
+        console.log("Here:");
+        console.log(date);
+        console.log("it is");
         var taskArray = [];
 
-        taskArray = JSON.parse(localStorage.getItem('taskArray'));
+        taskArray = JSON.parse(localStorage.getItem(date));
 
         if(taskArray){
             console.log("Local Storage array has elements in it!");
@@ -38,14 +43,17 @@ class AddTask extends Component {
 
     handleFormSubmit = (e) => {
         e.preventDefault();
+        const { params: { dateObject } } = this.props.match;//*************** */
+        var date = JSON.stringify(dateObject);
+        
 
         const newTask = this.state.task;
         var newArray = [];
 
-        newArray = JSON.parse(localStorage.getItem('taskArray'));
+        newArray = JSON.parse(localStorage.getItem(date));
 
         if(newArray){
-            console.log("Success!");
+            console.log("Elements exist in array");
             // taskArray = JSON.parse(localStorage.getItem('taskArray'));
         }else{
             newArray = this.state.taskArray;
@@ -53,7 +61,7 @@ class AddTask extends Component {
 
         newArray = [...newArray, newTask];
         this.setState({ taskArray : newArray});
-        localStorage.setItem('taskArray', JSON.stringify(newArray));
+        localStorage.setItem( date , JSON.stringify(newArray));
 
     };
 
@@ -62,7 +70,7 @@ class AddTask extends Component {
     };
 
     render() {
-        const { params: { date } } = this.props.match;
+        const { params: { dateObject } } = this.props.match;
 
         return (
             <>
@@ -78,7 +86,7 @@ class AddTask extends Component {
                     {this.display()}
                     
                 </div>
-                <div>Today's date is the {date}'th</div>
+                <div>Today's date is {dateObject}'th</div>
             </>
 
             
