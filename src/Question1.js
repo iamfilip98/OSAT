@@ -8,6 +8,8 @@ class Question1 extends React.Component {
 
 
 
+
+
   render() {
     return (
       <div className="login">
@@ -17,8 +19,8 @@ class Question1 extends React.Component {
             </div>
             
 
-            <button className="quizbutton" onClick={this.props.handleClick}>Night</button>
-            <button className="quizbutton" onClick={this.props.handleClick}>Day</button>
+            <button className="quizbutton" onClick={(e) => {this.props.handleClick(e); this.props.handleNight(e)}} >Night</button>
+            <button className="quizbutton" onClick={(e) => {this.props.handleClick(e); this.props.handleDay(e)}}>Day</button>
         </main>
       </div>
     );

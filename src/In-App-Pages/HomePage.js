@@ -12,6 +12,7 @@ import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import { LinkContainer } from 'react-router-bootstrap';
 import calendar from '../assets/calendar.jpeg';
 import Home from './Home';
+import TextMe from './TextMe';
 import '../scss/main.scss';
 
 
@@ -43,6 +44,9 @@ class HomePage extends Component {
                         <Route exact path="/calendar">
                             <Calendar />
                         </Route>
+                        <Route exact path="/textme">
+                            <TextMe />
+                        </Route>
                         <Route exact path="/settings">
                             <Settings />
                         </Route>
@@ -59,6 +63,9 @@ class HomePage extends Component {
                         </LinkContainer>
                         <LinkContainer to="/calendar">
                             <Button>Calendar</Button>
+                        </LinkContainer>
+                        <LinkContainer to="/textme">
+                            <Button>Text Me</Button>
                         </LinkContainer>
                         <LinkContainer to="/library">
                             <Button>Library</Button>
