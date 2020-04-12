@@ -127,7 +127,7 @@ main {
 .calendar .header {
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 57%;
+  font-size: 110%;
   padding: 1.5em 0;
   border-bottom: 1px solid var(--border-color);
 }
@@ -162,7 +162,7 @@ main {
 
 .calendar .body .cell {
   position: relative;
-  height: 2.3em;
+  height: 4em;
   border-right: 1px solid var(--border-color);
   overflow: hidden;
   cursor: pointer;
@@ -195,7 +195,7 @@ main {
 
 .calendar .body .cell .number {
   position: absolute;
-  font-size: 82.5%;
+  font-size: 120%;
   line-height: 1;
   top: .75em;
   right: .75em;
@@ -235,7 +235,7 @@ main {
     margin: 0;
     padding: 0;
     display: flex;
-    font-size: 43%;
+    font-size: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;

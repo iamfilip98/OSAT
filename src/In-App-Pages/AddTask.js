@@ -6,7 +6,6 @@ class AddTask extends Component {
     state = {
         task: '',
         taskArray : []
-        // rememberMe: false
     };
      
 
@@ -40,11 +39,7 @@ class AddTask extends Component {
     handleFormSubmit = (e) => {
         e.preventDefault();
 
-        
         const newTask = this.state.task;
-
-
-
         var newArray = [];
 
         newArray = JSON.parse(localStorage.getItem('taskArray'));
@@ -67,20 +62,24 @@ class AddTask extends Component {
     };
 
     render() {
-        
+        const { params: { date } } = this.props.match;
+
         return (
-            <div>
-                <form onSubmit={this.handleFormSubmit}>
-                    <label>
-                        Add task<input name="task" value={this.state.task} onChange={this.handleChange}/>
-                    </label>
+            <>
+                <div>
+                    <form onSubmit={this.handleFormSubmit}>
+                        <label>
+                            Add task<input name="task" value={this.state.task} onChange={this.handleChange}/>
+                        </label>
 
-                    <button type="submit">Add</button>
-                </form>
+                        <button type="submit">Add</button>
+                    </form>
 
-                {this.display()}
-                
-            </div>
+                    {this.display()}
+                    
+                </div>
+                <div>Today's date is the {date}'th</div>
+            </>
 
             
 

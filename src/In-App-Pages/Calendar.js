@@ -72,9 +72,10 @@ class Calendar extends React.Component {
         while (day <= endDate) {
             for (let i = 0; i < 7; i++) {
                 formattedDate = format(day, dateFormat); //29
+                //console.log(formattedDate);
                 const cloneDay = day;//29 march, 2020...
                 days.push(
-                    <LinkContainer to = '/addtask'>
+                    <LinkContainer to = {`/myCalendar/${formattedDate}`}>
                         <div
                             className={`col cell ${!isSameMonth(day, monthStart)? "disabled":
                             isSameDay(day, selectedDate) ? "selected" :
@@ -131,10 +132,10 @@ class Calendar extends React.Component {
     };
 
     render() {
-
+        
         //console.log(this.state.currentMonth);
         return (
-
+            
             
             <div className = 'calendar'>
                 {/* <form onSubmit = {this.props.changeDisplay}>
@@ -146,6 +147,8 @@ class Calendar extends React.Component {
                 {this.renderHeader()}
                 {this.renderDays()}
                 {this.renderCells()}
+
+
             </div>   
         );
     }

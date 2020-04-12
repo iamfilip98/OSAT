@@ -39,15 +39,18 @@ class LandingPage extends Component {
         return (
             <Router>
                 <h1 className = 'header'>Welcome to OSAT!</h1>
-                <h2>
+                <div>
                     <Switch>
                         <Route exact path="/" component={HomePage}/>
+
                         <Route exact path="/calendar" component={Calendar}/>
+                        <Route exact path = "/myCalendar/:date" component = {AddTask}/>
+
                         <Route exact path="/settings" component={Settings}/>
                         <Route exact path="/library" component={Library}/>
                         <Route exact path="/addtask" component={AddTask}/>
                     </Switch>
-                </h2>
+                </div>
 
                 <h2 className="myNavbar">
                     <ButtonToolbar className = 'homepage-btn-toolbar'>
