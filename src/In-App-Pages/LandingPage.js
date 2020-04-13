@@ -20,10 +20,7 @@ import TextMe from './TextMe';
 class LandingPage extends Component {
     constructor(props){
         super(props);
-<<<<<<< HEAD
 
-=======
->>>>>>> Silly changes
     }
 
 
@@ -70,48 +67,6 @@ class LandingPage extends Component {
                 </h2>
             </Router>
 
-
-           
-
-            // <Router>
-            //     <Container className="p-4">
-            //         <Jumbotron>
-            //             <h1 className = 'header'>Welcome To React-Bootstrap</h1>
-            //             <h2>
-            //                 Current Page is{' '}
-            //                 <Switch>
-            //                     <Route path="/calendar">
-            //                         <Calendar />
-            //                     </Route>
-            //                     <Route path="/settings">
-            //                         <Settings />
-            //                     </Route>
-            //                     <Route path="/">
-            //                         <Home />
-            //                     </Route>
-            //                 </Switch>
-            //             </h2>
-
-            //             <h2>
-            //                 Navigate to{' '}
-            //                 <ButtonToolbar className="custom-btn-toolbar">
-            //                     <LinkContainer to="/">
-            //                         <Button>Home</Button>
-            //                     </LinkContainer>
-            //                     <LinkContainer to="/calendar">
-            //                         <Button>Calendar</Button>
-            //                     </LinkContainer>
-            //                     <LinkContainer to="/settings">
-            //                         <Button>Settings</Button>
-            //                     </LinkContainer>
-            //                 </ButtonToolbar>
-            //             </h2>
-            //         </Jumbotron>
-            //     </Container>
-            // </Router>
-            
-           
-           
             
          );
     }
