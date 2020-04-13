@@ -59,7 +59,7 @@ class QuizScreen extends React.Component {
                 You are a <b>Night Owl!</b>
                 <br></br>
                 <img src = {Owl} width="300" height="200" alt="night-owl"/>
-                <button onClick = {this.props.goToHomePage}>Continue</button>
+                <button onClick = {this.props.goToLandingPage}>Continue</button>
               </div> 
             : null }
             
