@@ -20,7 +20,10 @@ import TextMe from './TextMe';
 class LandingPage extends Component {
     constructor(props){
         super(props);
+<<<<<<< HEAD
 
+=======
+>>>>>>> Silly changes
     }
 
 
