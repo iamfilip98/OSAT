@@ -12,7 +12,8 @@ class QuizScreen extends React.Component {
           question1: true,
           question2: false,
           question3: false,
-          result: false
+          result: false,
+          personalitytype: ""
       }
   }
 
@@ -38,6 +39,29 @@ class QuizScreen extends React.Component {
     this.setState({ result: true });
   }
 
+
+  night = (e) =>{
+    e.preventDefault();
+    this.setState({ personalitytype: "Night" });
+  }
+
+  day = (e) =>{
+    e.preventDefault();
+    this.setState({ personalitytype: "Busy" });
+  }
+
+  bee = (e) =>{
+    e.preventDefault();
+    this.setState({ personalitytype: this.state.personalitytype + " Bee" });
+  }
+  
+  owl = (e) =>{
+    e.preventDefault();
+    this.setState({ personalitytype: this.state.personalitytype + " Owl" });
+  }
+
+
+
   consoleIt = () => {
     console.log("button clicked");
   }
@@ -50,16 +74,16 @@ class QuizScreen extends React.Component {
             <div className="box">
                 <b>QUIZ</b>
             
-            {this.state.question1 ? <Question1 handleClick={this.q2}/> : null }
-            {this.state.question2 ? <Question2 handleClick={this.q3}/> : null }
+            {this.state.question1 ? <Question1 handleClick={this.q2} handleNight={this.night} handleDay={this.day}/> : null }
+            {this.state.question2 ? <Question2 handleClick={this.q3} handleBee={this.bee} handleOwl={this.owl}/> : null }
             {this.state.question3 ? <Question3 handleClick={this.showresult}/> : null }
 
             {this.state.result ? 
               <div>
-                You are a <b>Night Owl!</b>
-                <br></br>
-                <img src = {Owl} width="300" height="200" alt="night-owl"/>
-                <button onClick = {this.props.goToLandingPage}>Continue</button>
+                
+                You are a <b>{this.state.personalitytype}</b>
+                
+                <button onClick = {this.props.goToHomePage}>Continue</button>
               </div> 
             : null }
             
