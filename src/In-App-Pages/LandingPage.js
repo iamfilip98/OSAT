@@ -11,6 +11,7 @@ import Library from './Library';
 import settings_icon from '../assets/settings-icon.png';
 import '../scss/main.scss';
 import AddTask from './AddTask';
+import TextMe from './TextMe';
 
 
 
@@ -20,19 +21,11 @@ class LandingPage extends Component {
     constructor(props){
         super(props);
 
-        // this.state = {
-        //     display: true
-        // }
     }
 
-    // changeDisplay(e){
-    //     console.log(e.target.value);
-    //     //this.setState(!this.state.display);
-    // }
 
-    goToAddTask(){
-        
-    }
+
+
 
     render() {
         
@@ -45,10 +38,11 @@ class LandingPage extends Component {
 
                         <Route exact path="/calendar" component={Calendar}/>
                         <Route exact path = "/myCalendar/:dateString" component = {AddTask}/>
-
-                        <Route exact path="/settings" component={Settings}/>
-                        <Route exact path="/library" component={Library}/>
                         <Route exact path="/addtask" component={AddTask}/>
+                        <Route exact path="/textme" component={TextMe}/>
+                        <Route exact path="/library" component={Library}/>
+                        <Route exact path="/settings" component={Settings}/>
+                        
                     </Switch>
                 </div>
 
@@ -59,6 +53,9 @@ class LandingPage extends Component {
                         </LinkContainer>
                         <LinkContainer to="/calendar">
                             <Button>Calendar</Button>
+                        </LinkContainer>
+                        <LinkContainer to="/textme">
+                            <Button>Text Me</Button>
                         </LinkContainer>
                         <LinkContainer to="/library">
                             <Button>Library</Button>
