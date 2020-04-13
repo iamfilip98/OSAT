@@ -23,6 +23,8 @@ class Calendar extends React.Component {
                 </div>
                 <div className="col col-center">
                     <span>
+                    {console.log("THIS ONE!!")}
+                    {console.log(this.state.currentMonth)}
                     {format(this.state.currentMonth, dateFormat)}
                     </span>
                 </div>
@@ -68,6 +70,7 @@ class Calendar extends React.Component {
         let days = [];
         let day = startDate;
         let formattedDate = "";
+        // alert(typeof day);
 
         while (day <= endDate) {
             for (let i = 0; i < 7; i++) {

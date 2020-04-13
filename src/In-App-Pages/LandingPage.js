@@ -44,7 +44,7 @@ class LandingPage extends Component {
                         <Route exact path="/" component={HomePage}/>
 
                         <Route exact path="/calendar" component={Calendar}/>
-                        <Route exact path = "/myCalendar/:dateObject" component = {AddTask}/>
+                        <Route exact path = "/myCalendar/:dateString" component = {AddTask}/>
 
                         <Route exact path="/settings" component={Settings}/>
                         <Route exact path="/library" component={Library}/>

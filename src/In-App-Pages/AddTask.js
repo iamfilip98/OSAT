@@ -1,6 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 
 
+
 class AddTask extends Component {
    
     state = {
@@ -8,10 +9,11 @@ class AddTask extends Component {
         taskArray : []
     };
      
+    
 
     display(){
-        const { params: { dateObject } } = this.props.match;//*************** */
-        var date = JSON.stringify(dateObject);
+        const { params: { dateString } } = this.props.match;//*************** */
+        var date = dateString;
         console.log("Here:");
         console.log(date);
         console.log("it is");
@@ -28,23 +30,41 @@ class AddTask extends Component {
 
         return (
             <div>
-                <ul>
-                    {
-                        taskArray.map((task) => {
-                            return(
-                            <li>{task}</li>
-                            ); 
-                        })
-                    }
-                </ul>
+                
+                {
+                    taskArray.map((task, index) => {
+                        return(
+                            <div key = {index}>
+                                {task}
+                                <button onClick = {this.delete.bind(this, index, date)}>delete</button>
+                            </div>
+                        ); 
+                    })
+                }
+                
             </div>
         );
     }
 
+    delete(index, date) {
+        console.log(index);
+        console.log(date);
+
+        var oldArray = JSON.parse(localStorage.getItem(date));
+
+        oldArray.splice(index,1);
+        var newArray = JSON.stringify(oldArray);
+
+        localStorage.setItem(date,newArray);
+        this.setState({taskArray : newArray});
+    }
+
+    
+
     handleFormSubmit = (e) => {
         e.preventDefault();
-        const { params: { dateObject } } = this.props.match;//*************** */
-        var date = JSON.stringify(dateObject);
+        const { params: { dateString } } = this.props.match;//*************** */
+        var date = dateString;
         
 
         const newTask = this.state.task;
@@ -70,11 +90,20 @@ class AddTask extends Component {
     };
 
     render() {
-        const { params: { dateObject } } = this.props.match;
+        const { params: { dateString } } = this.props.match;
+        console.log(dateString);
+        var newString = dateString.substring(3,10);
+
+        //var formattedDate = 
+
+
+        //{format(dateString, dateFormat)}
+
 
         return (
             <>
                 <div>
+                    <div>{newString}</div>
                     <form onSubmit={this.handleFormSubmit}>
                         <label>
                             Add task<input name="task" value={this.state.task} onChange={this.handleChange}/>
@@ -86,7 +115,7 @@ class AddTask extends Component {
                     {this.display()}
                     
                 </div>
-                <div>Today's date is {dateObject}'th</div>
+                
             </>
 
             
