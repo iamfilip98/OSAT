@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import mobiscroll from "@mobiscroll/react";
 import "@mobiscroll/react/dist/css/mobiscroll.min.css";
 import { format } from 'date-fns';
+import '../scss/main.scss';
 
 export class HomePage extends Component {
     constructor(props) {
@@ -30,14 +31,17 @@ export class HomePage extends Component {
         }
         
         return(
-            <div>
+            <div className = 'taskBox'>
 
                 {
                     taskArray.map((task) => {
                         return(
-                            <div>
-                                {task}
-                            </div>
+                            <>
+                                <div className = 'task_HP'>
+                                    {task}
+                                </div>
+                                <br></br>
+                            </>
                         );
                     })
                 }
@@ -48,7 +52,7 @@ export class HomePage extends Component {
     render() {
         return (
             <>
-                <h1>Homepage</h1>
+
                 <h2>Today's tasks:</h2>
                 {this.displayTasks()}
             </>

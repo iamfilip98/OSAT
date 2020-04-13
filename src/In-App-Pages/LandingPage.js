@@ -23,10 +23,6 @@ class LandingPage extends Component {
 
     }
 
-
-
-
-
     render() {
         
         return (
@@ -52,7 +48,7 @@ class LandingPage extends Component {
                             <Button variant="secondary">HomePage</Button>
                         </LinkContainer>
                         <LinkContainer to="/calendar">
-                            <Button>Calendar</Button>
+                            <Button variant="outline-success">Calendar</Button>
                         </LinkContainer>
                         <LinkContainer to="/textme">
                             <Button>Text Me</Button>

@@ -31,6 +31,7 @@ font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
     border-style: solid;
     position: relative;
     background-color: rgb(142, 224, 204);
+    margin-top: 20px;
 }
 .test:hover{
     background-color: rgb(144, 195, 49);
@@ -107,6 +108,14 @@ color: red;
 //*********************  HOMEPAGE  *************************************************
 .header {
     text-align: center;
+}
+.taskBox{
+    background-color: rgb(202, 153, 153);
+}
+.task_HP{
+    background-color: rgb(89, 89, 160);
+    border-radius: 2rem;
+    
 }
 
 
