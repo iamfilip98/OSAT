@@ -101,11 +101,11 @@ class Chat extends React.Component {
             messages: [...this.state.messages, item]
         });
 
-        setTimeout(() => {
-            const items = document.querySelectorAll('li');
-            const lastItem = items[items.length - 1];
-            document.querySelector('.c-chat__list').scrollTop = lastItem.offsetTop + lastItem.style.height;
-        }, 100);
+        // setTimeout(() => {
+        //     const items = document.querySelectorAll('li');
+        //     const lastItem = items[items.length - 1];
+        //     document.querySelector('.c-chat__list').scrollTop = lastItem.offsetTop + lastItem.style.height;
+        // }, 100);
     }
 
     handleSubmit(e) {

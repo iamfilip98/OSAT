@@ -31,6 +31,13 @@ class App extends Component {
   }
 
   changeScreen = (e) =>{
+
+    
+
+    if (this.state.username == "John"){
+      this.goToHomePage();
+
+    }
     
     this.setState({ loginscreen: false });
     this.setState({ welcomescreen: true });
@@ -56,11 +63,7 @@ class App extends Component {
     );
   }
 
-  handleLogIn = (e) =>{
-    
-    this.setState({ isLoggedIn: true });
 
-  }
 
   goToHomePage = (e) =>{
      //console.log("reached App.js function");
@@ -69,17 +72,36 @@ class App extends Component {
    
   }
 
+  councellorview = (e) =>{
+    
+    
+    return <HomePage username={this.state.username}></HomePage>
+    
+  
+ }
+
+
+
+
+  
+
   render() {
     return (
       <div className="app">
+
+
+        
              
         {this.state.loginscreen ? <LogInScreen handleUsername={this.handleUsername} handlePassword={this.handlePassword} handleClick={this.changeScreen} username={this.state.username} password={this.state.password} /> : null }
 
-        {this.state.welcomescreen ? <WelcomeScreen username={this.state.username} handleClick={this.changeScreenQuiz} /> : null }
 
-        {this.state.quizscreen ? <QuizScreen username={this.state.username} goToHomePage = {this.goToHomePage}/> : null }
+        {this.state.username == "Tim"? <>
+          {this.state.welcomescreen ? <WelcomeScreen username={this.state.username} handleClick={this.changeScreenQuiz} /> : null }
 
-        {this.state.homePage ? <HomePage username={this.state.username}  />: null }
+          {this.state.quizscreen ? <QuizScreen username={this.state.username} goToHomePage = {this.goToHomePage}/> : null }
+
+          {this.state.homePage ? <HomePage username={this.state.username}  />: null } </>:  this.state.homePage ? <HomePage username={this.state.username}  />: null  }
+        
 
       </div>
     );
