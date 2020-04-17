@@ -12,8 +12,8 @@ import settings_icon from '../assets/settings-icon.png';
 import '../scss/main.scss';
 import AddTask from './AddTask';
 import TextMe from './TextMe';
-
-
+import OSAT_sublogo from '../assets/OSAT_sublogo.png';
+import statusBar from '../assets/statusBar.png';
 
 
 
@@ -27,11 +27,16 @@ class LandingPage extends Component {
         
         return (
             <Router>
-                <h1 className = 'header'>Welcome to OSAT!</h1>
+                <div className = "OSAT_HP_LOGO">
+                    <img src={statusBar} height="22px" width="407px" className='statusBar' />
+                    <br></br>
+                    <img src={OSAT_sublogo} height="30px" width="120px"/>
+                    <br></br>
+                </div>
+                <br></br>
                 <div>
                     <Switch>
                         <Route exact path="/" component={HomePage}/>
-
                         <Route exact path="/calendar" component={Calendar}/>
                         <Route exact path = "/myCalendar/:dateString" component = {AddTask}/>
                         <Route exact path="/addtask" component={AddTask}/>
@@ -45,7 +50,7 @@ class LandingPage extends Component {
                 <h2 className="myNavbar">
                     <ButtonToolbar className = 'homepage-btn-toolbar'>
                         <LinkContainer to="/">
-                            <Button variant="secondary">HomePage</Button>
+                            <Button>HomePage</Button>
                         </LinkContainer>
                         <LinkContainer to="/calendar">
                             <Button variant="outline-success">Calendar</Button>

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './scss/main.scss';
 
 class Question1 extends React.Component {

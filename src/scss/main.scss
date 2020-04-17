@@ -30,7 +30,7 @@ font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
     border-color: rgb(0, 0, 0);
     border-style: solid;
     position: relative;
-    background-color: rgb(142, 224, 204);
+    background-color: rgb(255, 252, 209);
     margin-top: 20px;
 }
 .test:hover{
@@ -105,7 +105,7 @@ color: red;
     background-color: #247ff7;
 }
 
-//*********************  HOMEPAGE  *************************************************
+//*********************  HOMEPAGE/LANDINGPAGE  *************************************************
 .header {
     text-align: center;
 }
@@ -118,7 +118,16 @@ color: red;
     
 }
 
+.OSAT_HP_LOGO{
+    position: relative;
+    background-color: black;
+    border-radius: 7px 7px 0px 0px;
+}
 
+.OSAT_HP_LOGO > img{
+    position: relative;
+    top: -2px;
+}
 
 
 .myNavbar {
@@ -186,6 +195,15 @@ td:hover
 {
 	background-color: rgb(240, 163, 40);
 }
+
+
+
+
+
+
+
+
+
 
 //**************************************************************************
 @import "./bootstrap/bootstrap";
@@ -347,4 +365,56 @@ td:hover
       opacity: 1;
       transform: scale(1);
     }
-  }
+}
+.goBackButton{
+    position: relative;
+    right: 169px;
+    top: -45px;
+}
+
+.goBackButton:hover{
+    transform: scale(1.4);
+    transition: .25s ease-out;
+    cursor: pointer;
+}
+
+.statusBar{
+    position: relative;
+    left: -2px;
+    border-radius: 15px 15px 0px 0px;
+    margin-bottom: 8px;
+}
+
+.todaysDate{
+    font-size: 179%;
+    position: relative;
+    bottom: 12px;
+}
+
+.todaysTasksBG{
+    height: 396px;
+    background-color: #805c3c6b;
+    width: 392px;
+    position: relative;
+    left: 7px;
+    border-radius: 0px 72px 72px 72px;
+}
+
+.taskTitle{
+    float: left;
+    font-size: 166%;
+    font-family: monospace;
+}
+
+.addTaskButton{
+    width: 74px;
+    position: absolute;
+    left: 291px;
+    top: 295px;
+}
+
+.addTaskButton:hover{
+    transform: scale(1.4);
+    transition: .25s ease-out;
+    cursor: pointer;
+}
