@@ -7,12 +7,21 @@ import { LinkContainer } from 'react-router-bootstrap';
 import Calendar from './Calendar';
 import HomePage from './HomePage';
 import Library from './Library';
+import settings from '../assets/settings.png';
+import date from '../assets/date.png';
+import home from '../assets/home.png';
+import messages from '../assets/messages.png';
+import books from '../assets/books.png';
 import '../scss/main.scss';
 import AddTask from './AddTask';
 import TextMe from './TextMe';
+import Toast from 'react-bootstrap/Toast';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 import OSAT_sublogo from '../assets/OSAT_sublogo.png';
 import statusBar from '../assets/statusBar.png';
 import { format } from 'date-fns';
+
 
 
 class LandingPage extends Component {
@@ -31,6 +40,9 @@ class LandingPage extends Component {
         
         return (
             <Router>
+
+                
+
                 <div className = "OSAT_HP_LOGO">
                     <img src={statusBar} height="22px" width="407px" className='statusBar' />
                     <div className='currentTime'>{currentTime}</div>
@@ -39,6 +51,7 @@ class LandingPage extends Component {
                     <br></br>
                 </div>
                 <br></br>
+
                 <div>
                     <Switch>
                         <Route exact path="/" component={HomePage}/>
@@ -50,21 +63,34 @@ class LandingPage extends Component {
                         
                     </Switch>
                 </div>
+                
+                
+
+                
 
                 <h2 className="myNavbar">
                     <ButtonToolbar className = 'homepage-btn-toolbar'>
                         <LinkContainer to="/">
-                            <Button>HomePage</Button>
+                            <Button variant="primary"><img src = {home} width='30' height='30'/></Button>
                         </LinkContainer>
+          
                         <LinkContainer to="/calendar">
-                            <Button variant="outline-success">Calendar</Button>
+                            <Button variant="primary"><img src = {date} width='30' height='30'/></Button>
                         </LinkContainer>
+                       
                         <LinkContainer to="/textme">
-                            <Button>Text Me</Button>
+                            <Button variant="primary"><img src = {messages} width='30' height='30'/></Button>
                         </LinkContainer>
+          
                         <LinkContainer to="/library">
-                            <Button>Library</Button>
+                            <Button variant="primary"><img src = {books} width='30' height='30'/></Button>
                         </LinkContainer>
+
+                        <LinkContainer to="/settings">
+                            <Button variant="primary"><img src = {settings} width='30' height='30'/></Button>
+                        </LinkContainer>
+
+
                     </ButtonToolbar>
                 </h2>
             </Router>

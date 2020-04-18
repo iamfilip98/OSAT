@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import mobiscroll from "@mobiscroll/react";
 import "@mobiscroll/react/dist/css/mobiscroll.min.css";
 import { format } from 'date-fns';
+import Card from 'react-bootstrap/Card';
+import { LinkContainer } from 'react-router-bootstrap';
 import '../scss/main.scss';
+
 
 export class HomePage extends Component {
     constructor(props) {
@@ -12,6 +15,8 @@ export class HomePage extends Component {
             clicks : 0
         }
     }
+
+
 
     displayTasks(){
 
@@ -38,7 +43,7 @@ export class HomePage extends Component {
             <div className = 'taskBox'>
 
                 {
-                    taskArray.map((task) => {
+                    taskArray.map((task) => { 
                         return(
                             <>
                                 <div className = 'task_HP'>
@@ -53,6 +58,7 @@ export class HomePage extends Component {
             </div>
         );
     }
+
 
     checkBoxClick(arrayLength){
 
@@ -96,14 +102,34 @@ export class HomePage extends Component {
     //     }
     // }
 
+
     render() {
 
         
         return (
             <>
+                 <h1 className = 'header'>Welcome to OSAT!</h1>
+                <Card border = 'warning' bg={'info'} text={'light'}>
+                    
 
-                <h2>Today's tasks:</h2>
-                {this.displayTasks()}   
+                    <Card.Header>Daily Motivation</Card.Header>
+                    <Card.Body>
+                        <blockquote className="blockquote mb-0">
+                        <p>
+                            {' '}
+                                Last week, you completed 3 tasks! This week, you are on track to complete 5. Keep going and don't forget to smile!
+                            {' '}
+                        </p>
+                       
+                        </blockquote>
+                    </Card.Body>
+                </Card>
+                
+                <h2>................................................</h2>
+                <h2>Today's Tasks</h2>
+                
+                {this.displayTasks()}
+
             </>
         );
     }  
