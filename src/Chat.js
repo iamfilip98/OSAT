@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './scss/main.scss';
 console.clear();
 
 const messages = [
@@ -166,7 +166,7 @@ class Chat extends React.Component {
                     {this.state.messages.map((message, index) => <Message key={index} data={message} />)}
                 </ul>
                 <form className="c-chat__form" onSubmit={this.handleSubmit}>
-                    <input type="text" name="input" placeholder="Type your message here..." autoFocus autoComplete="off" required />
+                    <input type="text" name="input" style={{"width": "300px", "position": "absolute", "right": "412px"}} className='chatInput' placeholder="Type your message here..." autoFocus autoComplete="off" required />
                 </form>
             </div>
         );
