@@ -35,7 +35,7 @@ class App extends Component {
     
 
     if (this.state.username == "John"){
-      this.goToHomePage();
+      this.goToLandingPage();
 
     }
     
@@ -75,7 +75,7 @@ class App extends Component {
   councellorview = (e) =>{
     
     
-    return <HomePage username={this.state.username}></HomePage>
+    return <LandingPage username={this.state.username}></LandingPage>
     
   
  }
