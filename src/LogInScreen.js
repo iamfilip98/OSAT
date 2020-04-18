@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Logo from "./assets/OSAT.png";
 import './scss/main.scss';
-
+import './login.css'
 class LogInScreen extends Component {
 
 
@@ -72,6 +72,7 @@ class LogInScreen extends Component {
                   placeholder="username"
                   value={this.props.username}
                   onChange={this.props.handleUsername}
+                  style={{"color" :"orange;"}}
                   />
               </div>
               <div className="password">
@@ -91,6 +92,7 @@ class LogInScreen extends Component {
               </div>
             </form>
             
+          
         
       </div>
     );
