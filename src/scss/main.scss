@@ -110,8 +110,12 @@ color: red;
     text-align: center;
 }
 .taskBox{
-    background-color: rgb(202, 153, 153);
+    background-color: #ca9999;
+    display: flex;
+    width: 325px;
+    border-radius: 0px 10px 10px 0px;
 }
+
 .task_HP{
     background-color: rgb(89, 89, 160);
     border-radius: 2rem;
@@ -392,7 +396,7 @@ td:hover
 }
 
 .todaysTasksBG{
-    height: 396px;
+    height: 487px;
     background-color: #805c3c6b;
     width: 392px;
     position: relative;
@@ -404,17 +408,68 @@ td:hover
     float: left;
     font-size: 166%;
     font-family: monospace;
+    height: 11px;
 }
 
 .addTaskButton{
     width: 74px;
     position: absolute;
-    left: 291px;
-    top: 295px;
+    left: 305px;
+    top: 406px;
 }
 
 .addTaskButton:hover{
-    transform: scale(1.4);
+    transform: scale(1.2);
     transition: .25s ease-out;
     cursor: pointer;
+}
+
+.taskHeader{
+    height: 50px;
+}
+
+.deleteTask{
+    width: 20px;
+    position: absolute;
+    left: 358px;
+    display: inline-block;
+}
+
+.deleteTask:hover{
+    transform: scale(1.3);
+    transition: .25s ease-out;
+    cursor: pointer;
+}
+
+.editIcon{
+    width: 30px;
+    display: inline-block;
+    position: absolute;
+    left: 325px;
+}
+
+.editIcon:hover{
+    transform: scale(1.2);
+    transition: .25s ease-out;
+    cursor: pointer;
+}
+
+.bulletPoint{
+    width: 30px;
+}
+
+.currentTime{
+    width: 84px;
+    background-color: black;
+    position: absolute;
+    z-index: inherit;
+    left: 161px;
+    bottom: 40px;
+    font-size: 93%;
+    color: white;
+}
+
+
+.redStyle{
+    background-color: red;
 }

@@ -12,7 +12,6 @@ class LogInScreen extends Component {
         "John":"1234",
         "Tim":"pass",
         "Lennard":"bow",
-        " ":" "
       },
       
       errorhappened: false

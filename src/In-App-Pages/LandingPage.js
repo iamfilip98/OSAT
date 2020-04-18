@@ -6,29 +6,34 @@ import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import { LinkContainer } from 'react-router-bootstrap';
 import Calendar from './Calendar';
 import HomePage from './HomePage';
-import Settings from './Settings';
 import Library from './Library';
-import settings_icon from '../assets/settings-icon.png';
 import '../scss/main.scss';
 import AddTask from './AddTask';
 import TextMe from './TextMe';
 import OSAT_sublogo from '../assets/OSAT_sublogo.png';
 import statusBar from '../assets/statusBar.png';
-
+import { format } from 'date-fns';
 
 
 class LandingPage extends Component {
     constructor(props){
         super(props);
 
+        this.state = {
+            time: new Date()
+        }
     }
 
     render() {
+        //this.setState({ time : new Date()});
+        var timeFormat = 'p';
+        var currentTime = format(this.state.time, timeFormat);
         
         return (
             <Router>
                 <div className = "OSAT_HP_LOGO">
                     <img src={statusBar} height="22px" width="407px" className='statusBar' />
+                    <div className='currentTime'>{currentTime}</div>
                     <br></br>
                     <img src={OSAT_sublogo} height="30px" width="120px"/>
                     <br></br>
@@ -42,7 +47,6 @@ class LandingPage extends Component {
                         <Route exact path="/addtask" component={AddTask}/>
                         <Route exact path="/textme" component={TextMe}/>
                         <Route exact path="/library" component={Library}/>
-                        <Route exact path="/settings" component={Settings}/>
                         
                     </Switch>
                 </div>
@@ -60,9 +64,6 @@ class LandingPage extends Component {
                         </LinkContainer>
                         <LinkContainer to="/library">
                             <Button>Library</Button>
-                        </LinkContainer>
-                        <LinkContainer to="/settings">
-                            <img src = {settings_icon} width='30' height='30'/>
                         </LinkContainer>
                     </ButtonToolbar>
                 </h2>
