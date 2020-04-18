@@ -8,10 +8,20 @@ import Calendar from './Calendar';
 import HomePage from './HomePage';
 import Settings from './Settings';
 import Library from './Library';
-import settings_icon from '../assets/settings-icon.png';
+import settings from '../assets/settings.png';
+import date from '../assets/date.png';
+import home from '../assets/home.png';
+import messages from '../assets/messages.png';
+import books from '../assets/books.png';
 import '../scss/main.scss';
 import AddTask from './AddTask';
 import TextMe from './TextMe';
+import Toast from 'react-bootstrap/Toast'
+import Card from 'react-bootstrap/Card'
+import ListGroup from 'react-bootstrap/ListGroup'
+ 
+
+
 
 
 
@@ -31,7 +41,7 @@ class LandingPage extends Component {
         
         return (
             <Router>
-                <h1 className = 'header'>Welcome to OSAT!</h1>
+                
                 <div>
                     <Switch>
                         <Route exact path="/" component={HomePage}/>
@@ -45,23 +55,27 @@ class LandingPage extends Component {
                         
                     </Switch>
                 </div>
+                
+                
+
+                
 
                 <h2 className="myNavbar">
                     <ButtonToolbar className = 'homepage-btn-toolbar'>
                         <LinkContainer to="/">
-                            <Button variant="secondary">HomePage</Button>
+                            <Button variant="primary"><img src = {home} width='30' height='30'/></Button>
                         </LinkContainer>
                         <LinkContainer to="/calendar">
-                            <Button>Calendar</Button>
+                            <Button variant="primary"><img src = {date} width='30' height='30'/></Button>
                         </LinkContainer>
                         <LinkContainer to="/textme">
-                            <Button>Text Me</Button>
+                            <Button variant="primary"><img src = {messages} width='30' height='30'/></Button>
                         </LinkContainer>
                         <LinkContainer to="/library">
-                            <Button>Library</Button>
+                            <Button variant="primary"><img src = {books} width='30' height='30'/></Button>
                         </LinkContainer>
                         <LinkContainer to="/settings">
-                            <img src = {settings_icon} width='30' height='30'/>
+                            <Button variant="primary"><img src = {settings} width='30' height='30'/></Button>
                         </LinkContainer>
                     </ButtonToolbar>
                 </h2>

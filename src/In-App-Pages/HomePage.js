@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 import mobiscroll from "@mobiscroll/react";
 import "@mobiscroll/react/dist/css/mobiscroll.min.css";
 import { format } from 'date-fns';
+import ListGroup from 'react-bootstrap/ListGroup'
+import Card from 'react-bootstrap/Card'
+import { LinkContainer } from 'react-router-bootstrap';
+
 
 export class HomePage extends Component {
     constructor(props) {
         super(props);
 
     }
+
+
 
     displayTasks(){
 
@@ -33,7 +39,7 @@ export class HomePage extends Component {
             <div>
 
                 {
-                    taskArray.map((task) => {
+                    taskArray.map((task) => { 
                         return(
                             <div>
                                 {task}
@@ -45,12 +51,35 @@ export class HomePage extends Component {
         );
     }
 
+    
     render() {
         return (
             <>
-                <h1>Homepage</h1>
-                <h2>Today's tasks:</h2>
-                {this.displayTasks()}
+                 <h1 className = 'header'>Welcome to OSAT!</h1>
+                <Card border = 'warning' bg={'info'} text={'light'}>
+                    
+
+                    <Card.Header>Daily Motivation</Card.Header>
+                    <Card.Body>
+                        <blockquote className="blockquote mb-0">
+                        <p>
+                            {' '}
+                                Last week, you completed 3 tasks! This week, you are on track to complete 5. Keep going and don't forget to smile!
+                            {' '}
+                        </p>
+                       
+                        </blockquote>
+                    </Card.Body>
+                </Card>
+                
+                <h2>................................................</h2>
+                <h2>Today's Tasks</h2>
+                
+               
+               
+
+               
+                    {this.displayTasks()}
             </>
         );
     }  
