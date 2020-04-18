@@ -3,7 +3,7 @@ import LogInScreen from './LogInScreen';
 import WelcomeScreen from './WelcomeScreen';
 import QuizScreen from './QuizScreen';
 import Message from './Message';
-import HomePage from './In-App-Pages/HomePage';
+import LandingPage from './In-App-Pages/LandingPage';
 import './scss/main.scss';
 
 
@@ -19,7 +19,7 @@ class App extends Component {
       loginscreen: true, 
       welcomescreen: false,
       quizscreen: false,
-      homePage: false,
+      landingpage: false,
       username : "",
       password : ""
       
@@ -65,10 +65,10 @@ class App extends Component {
 
 
 
-  goToHomePage = (e) =>{
+  goToLandingPage = (e) =>{
      //console.log("reached App.js function");
      this.setState({ quizscreen : false});
-     this.setState({ homePage : true});
+     this.setState({ landingpage : true});
    
   }
 
@@ -95,13 +95,15 @@ class App extends Component {
         {this.state.loginscreen ? <LogInScreen handleUsername={this.handleUsername} handlePassword={this.handlePassword} handleClick={this.changeScreen} username={this.state.username} password={this.state.password} /> : null }
 
 
+
         {this.state.username == "Tim"? <>
           {this.state.welcomescreen ? <WelcomeScreen username={this.state.username} handleClick={this.changeScreenQuiz} /> : null }
 
-          {this.state.quizscreen ? <QuizScreen username={this.state.username} goToHomePage = {this.goToHomePage}/> : null }
+          {this.state.quizscreen ? <QuizScreen username={this.state.username} goToLandingPage = {this.goToLandingPage}/> : null }
 
-          {this.state.homePage ? <HomePage username={this.state.username}  />: null } </>:  this.state.homePage ? <HomePage username={this.state.username}  />: null  }
+          {this.state.landingpage ? <LandingPage username={this.state.username}  />: null } </>:  this.state.landingpage ? <LandingPage username={this.state.username}  />: null  }
         
+
 
       </div>
     );

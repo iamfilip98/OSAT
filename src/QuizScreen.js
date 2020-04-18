@@ -84,7 +84,7 @@ class QuizScreen extends React.Component {
                 You are a <b>{this.state.personalitytype}</b>
                 </div>
                 
-                <button onClick = {this.props.goToHomePage}>Continue</button>
+                <button onClick = {this.props.goToLandingPage}>Continue</button>
               </div> 
             : null }
             

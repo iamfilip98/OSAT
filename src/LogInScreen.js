@@ -11,7 +11,7 @@ class LogInScreen extends Component {
       correctUser: {
         "John":"1234",
         "Tim":"pass",
-        "Lennard":"bow"
+        "Lennard":"bow",
       },
       
       errorhappened: false

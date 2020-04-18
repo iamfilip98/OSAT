@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    
+    <script>
+        // Ignore this in your implementation
+        window.isMbscDemo = true;
+    </script>
+
+    <title>Date types</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/prop-types@15.6.0/prop-types.min.js"></script>
+    <script src="https://unpkg.com/create-react-class@15.6.2/create-react-class.min.js"></script>
+    <script src="https://unpkg.com/react-addons-update/react-addons-update.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+    <!-- Mobiscroll JS and CSS Includes -->
+    <link rel="stylesheet" href="css/mobiscroll.react.min.css">
+    <script src="js/mobiscroll.react.min.js"></script>
+
+    <style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    </style>
+
+</head>
+<body>
+
+<div mbsc-page class="demo-date-object-ISO-8601-moment">
+    <div id="content"></div>
+</div>
+
+<script>
+    mobiscroll.settings = {
+        theme: 'ios',
+        themeVariant: 'light',
+        lang: 'en'
+    };
+</script>
+
+<script type="text/babel">
+
+    mobiscroll.settings = {
+        lang: 'en',
+        theme: 'ios',
+        themeVariant: 'light',
+        display: 'inline'
+    };
+    
+    class App extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                dateObjData: [],
+                dateStrData: [],
+                momentJsData: []
+            };
+        }
+        
+        addDate = () => {
+            const newItem = {
+                start: new Date(2019, 4, 8, 10, 45),
+                end: new Date(2019, 4, 8, 11, 45),
+                text: 'New Event'
+           };
+           this.setState(state => ({
+               dateObjData: [...state.dateObjData, newItem]
+           })); 
+            
+            this.dateObj.instance.navigate(new Date(2019, 4, 8));
+        };
+        
+        addISO = () => {
+            const newItem = {
+                start: '2019-09-15T15:30:00',
+                end: '2019-09-15T16:00:00',
+                text: 'New Event'
+           };
+           this.setState(state => ({
+               dateStrData: [...state.dateStrData, newItem]
+           })); 
+            
+            this.dateStr.instance.navigate('2019-09-15');
+        };
+        
+        addMoment = () => {
+            const newItem = {
+                // make sure that moment js is loaded
+                start: moment([2019, 3, 20, 18]),
+                end: moment([2019, 3, 20, 20]),
+                text: 'New Event'
+           };
+           this.setState(state => ({
+               momentJsData: [...state.momentJsData, newItem]
+           })); 
+            
+            this.momentJs.instance.navigate(moment([2019, 3, 20]));
+        };
+        
+        setDateObj = (comp) => {
+            this.dateObj = comp;
+        };
+        
+        setDateStr = (comp) => {
+            this.dateStr = comp;
+        };
+        
+        setMomentJs = (comp) => {
+            this.momentJs = comp;
+        };
+        
+        render() {
+            return (
+                <mobiscroll.Form>
+                    <div className="mbsc-grid">
+                        <div className="mbsc-row">
+                            <div className="mbsc-col-sm-12 mbsc-col-md-4">
+                                <mobiscroll.FormGroup>
+                                    <mobiscroll.FormGroupTitle>Date object</mobiscroll.FormGroupTitle>
+                                    <div className="mbsc-btn-group-block">
+                                        <mobiscroll.Button onClick={this.addDate} className="mbsc-btn-primary">start: new Date(2019, 4, 8, 10, 45) <br /> end: new Date(2019, 4, 8, 11, 45)</mobiscroll.Button>
+                                    </div>
+                                    <mobiscroll.Eventcalendar
+                                        ref={this.setDateObj}
+                                        data={this.state.dateObjData}   // More info about data: https://docs.mobiscroll.com/4-10-3/react/eventcalendar#opt-data
+                                    />
+                                </mobiscroll.FormGroup>
+                            </div>
+                            <div className="mbsc-col-sm-12 mbsc-col-md-4">
+                                <mobiscroll.FormGroup>
+                                    <mobiscroll.FormGroupTitle>ISO string</mobiscroll.FormGroupTitle>
+                                    <div className="mbsc-btn-group-block">
+                                        <mobiscroll.Button onClick={this.addISO} className="mbsc-btn-primary">start: 2019-09-15T15:30:00 <br /> end: 2019-09-15T16:00:00</mobiscroll.Button>
+                                    </div>
+                                    <mobiscroll.Eventcalendar
+                                        ref={this.setDateStr}
+                                        data={this.state.dateStrData}   // More info about data: https://docs.mobiscroll.com/4-10-3/react/eventcalendar#opt-data
+                                    />
+                                </mobiscroll.FormGroup>
+                            </div>
+                            <div className="mbsc-col-sm-12 mbsc-col-md-4">
+                                <mobiscroll.FormGroup>
+                                    <mobiscroll.FormGroupTitle>Moment js</mobiscroll.FormGroupTitle>
+                                    <div className="mbsc-btn-group-block">
+                                        <mobiscroll.Button onClick={this.addMoment} className="mbsc-btn-primary">start: moment([2019, 3, 20, 18]) <br /> end: moment([2019, 3, 20, 20])</mobiscroll.Button>
+                                    </div>
+                                    <mobiscroll.Eventcalendar
+                                        ref={this.setMomentJs}
+                                        data={this.state.momentJsData}  // More info about data: https://docs.mobiscroll.com/4-10-3/react/eventcalendar#opt-data
+                                    />
+                                </mobiscroll.FormGroup>
+                            </div>
+                        </div>
+                    </div>
+                </mobiscroll.Form>
+            );
+        }    
+    }
+    
+    ReactDOM.render(
+        <App />,
+        document.getElementById('content')
+    );
+</script>
+
+</body>
+</html>
