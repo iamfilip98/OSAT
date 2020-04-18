@@ -137,7 +137,7 @@ color: red;
 .myNavbar {
     position: absolute;
     bottom:40px;
-    left: 12px;
+    left: 27px;
     $theme-colors: ("primary": purple );
 }
 
@@ -145,6 +145,7 @@ color: red;
 
 .homepage-btn-toolbar > .btn {
     margin-right: 1.3rem;
+    padding-bottom: 2.5em;
     border-radius: 10rem;
     background-color: rgb(153, 0, 255);
 }
@@ -229,7 +230,7 @@ td:hover
   
   .b-chat {
       width: 100%;
-      margin: 0 5%;
+      margin: 0 0%;
       padding: 1em 0;
       height: 80%;
       
@@ -248,7 +249,7 @@ td:hover
       width: 100%;
       position: relative;
       height: 100%;
-      font-size: 0.5em;
+      font-size: 1em;
   
       &__list {
           margin: 0;
@@ -270,7 +271,7 @@ td:hover
   
                   .c-chat__message {
                       background: #00ac92;
-                      color: #fff;
+                      color: black;
                       border-top-right-radius: 0;
                       border-top-left-radius: 10px;
                   }
@@ -334,7 +335,7 @@ td:hover
               font-family: monospace;
               border-bottom: 1px solid #fff;
               background: none;
-              color: #fff;
+              color: black;
               opacity: 1;
               transition: opacity 0.4s;
   
