@@ -1,55 +1,159 @@
 import React, { Component, useState, useEffect } from 'react';
-
+import Button from 'react-bootstrap/Button';
+import Modal from "./Modal";
+import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./ModalStyles.scss";
+import goBackButton from '../assets/goBackButton.png';
+import '../scss/main.scss';
+import { format } from 'date-fns';
+import addTask_button from '../assets/add-task.jpg';
+import deleteIcon from '../assets/deleteIcon.png';
+import editIcon from '../assets/editIcon.png';
+import bulletPoint from '../assets/bulletPoint.png';
 
 
 class AddTask extends Component {
    
-    state = {
-        task: '',
-        taskArray : []
-    };
-     
-    
+    constructor(props) {
+        super(props);
 
-    display(){
+        this.state = {
+            task: "",
+            taskArray : [],
+            modal: false,
+            editModal: false,
+            editIndex: 0,
+            name: "",
+            modalInputName: "",
+            importance: "",
+            modalMaxTasks: false,
+            date: this.props.match.params.dateString
+
+        }
+    }
+    
+    goBack = () => {
+        this.props.history.push('/calendar');
+    }
+
+    //*****************MODAL CODE********************* */
+    handleMyChange(e) {
+        const target = e.target;
+        const name = target.name;
+        const value = target.value;
+
+        this.setState({
+          [name]: value
+        });
+    }
+
+    handleSubmit(e) {
+        // this.setState({ name: this.state.modalInputName });
+        // this.setState({ importance: this.state.importance});
+
+
         const { params: { dateString } } = this.props.match;//*************** */
         var date = dateString;
-        console.log("Here:");
-        console.log(date);
-        console.log("it is");
-        var taskArray = [];
 
-        taskArray = JSON.parse(localStorage.getItem(date));
+        const info1 = this.state.modalInputName;
+        const info2 = this.state.importance;
+        var newArray = [];
 
-        if(taskArray){
-            console.log("Local Storage array has elements in it!");
-            // taskArray = JSON.parse(localStorage.getItem('taskArray'));
+        newArray[0] = info1;
+        newArray[1] = info2;
+
+        var LS_Array = JSON.parse(localStorage.getItem(date));
+
+        if(LS_Array){
+            console.log("Elements exist in array");
         }else{
-            taskArray = this.state.taskArray;
+            LS_Array = [];
         }
 
-        return (
-            <div>
-                
-                {
-                    taskArray.map((task, index) => {
-                        return(
-                            <div key = {index}>
-                                {task}
-                                <button onClick = {this.delete.bind(this, index, date)}>delete</button>
-                            </div>
-                        ); 
-                    })
-                }
-                
-            </div>
+        LS_Array = [...LS_Array, newArray];
+        console.log(LS_Array);
+
+        //newArray = [...newArray, newTask];
+        //this.setState({ taskArray : newArray});
+        localStorage.setItem( date , JSON.stringify(LS_Array));
+
+        this.modalClose();
+    }
+    
+    modalOpen() {
+        this.setState({ modal: true });
+    }
+
+    modalClose() {
+        this.setState({
+            modal: false
+        });
+    }
+
+    editTask(index){
+        this.setState({ editModal: true });
+        this.setState({ editIndex : index});
+    }
+
+    editModalClose(){
+        this.setState({ editModal: false});
+    }
+
+
+    handleEdit(){
+        const { params: { dateString } } = this.props.match;//*************** */
+        var date = dateString;
+
+        var index = this.state.editIndex;
+        var LS_Array = JSON.parse(localStorage.getItem(date));
+        
+        LS_Array[index][0] = this.state.modalInputName;
+        LS_Array[index][1] = this.state.importance;
+
+        var newArray = JSON.stringify(LS_Array);
+        localStorage.setItem(date, newArray);
+    }
+
+
+    displayTodaysTasks() {
+        const { params: { dateString } } = this.props.match;//*************** */
+        var date = dateString;
+        var todaysTasksArray = JSON.parse(localStorage.getItem(date));
+
+        if(todaysTasksArray){
+            console.log("Elements exist in array");
+        }else{
+            todaysTasksArray = [];
+        }
+
+
+        if(this.state.importanceColor == "red"){
+            var color = "redStyle";
+        }
+
+        return(
+
+            todaysTasksArray.map((task, index) => {
+                return(
+                    <>
+                        <div className = "taskBox">
+                            <img src={bulletPoint} className='bulletPoint' />
+                            <div>{task[0]}</div>
+                            <img className='editIcon'  src={editIcon} onClick={e => this.editTask(index)} />
+                            <img className='deleteTask' src={deleteIcon} onClick = {this.deleteTask.bind(this, index, date)}/>
+                            
+                        </div>
+                        <br></br>
+                        
+
+                    </>
+                );
+            })
+            
         );
     }
 
-    delete(index, date) {
-        console.log(index);
-        console.log(date);
-
+    deleteTask(index, date){
         var oldArray = JSON.parse(localStorage.getItem(date));
 
         oldArray.splice(index,1);
@@ -59,67 +163,115 @@ class AddTask extends Component {
         this.setState({taskArray : newArray});
     }
 
+    checkForMaxTasks(){
+        // const { params: { dateString } } = this.props.match;//*************** */
+        // var date = dateString;
+        var date = this.state.date;
+
+        var ls_array = JSON.parse(localStorage.getItem(date));
+
+        if(ls_array){
+            var arrayLength = ls_array.length;
+            if(arrayLength >= 6){
+                this.setState({modalMaxTasks: true});
+            }else{
+                this.setState({modal : true});
+            }
+        }else{
+            this.setState({modal : true});
+        }
+        
+        console.log(arrayLength);
+    }
+
+    modalMaxTasksClose(){
+        this.setState({ modalMaxTasks : false});
+    }
+
+  
     
 
-    handleFormSubmit = (e) => {
-        e.preventDefault();
-        const { params: { dateString } } = this.props.match;//*************** */
-        var date = dateString;
-        
-
-        const newTask = this.state.task;
-        var newArray = [];
-
-        newArray = JSON.parse(localStorage.getItem(date));
-
-        if(newArray){
-            console.log("Elements exist in array");
-            // taskArray = JSON.parse(localStorage.getItem('taskArray'));
-        }else{
-            newArray = this.state.taskArray;
-        }
-
-        newArray = [...newArray, newTask];
-        this.setState({ taskArray : newArray});
-        localStorage.setItem( date , JSON.stringify(newArray));
-
-    };
-
-    handleChange = (event) => {
-        this.setState({ task : event.target.value });
-    };
+    //***************************************************************************************************** */
+    //***************************************************************************************************** */
 
     render() {
         const { params: { dateString } } = this.props.match;
-        console.log(dateString);
-        var newString = dateString.substring(3,10);
-
-        //var formattedDate = 
-
-
-        //{format(dateString, dateFormat)}
-
+        const { date } = this.props.location.state;
+        var dateFormat = 'MMMM do';
+        var formattedDate = format(date, dateFormat);
 
         return (
             <>
-                <div>
-                    <div>{newString}</div>
-                    <form onSubmit={this.handleFormSubmit}>
-                        <label>
-                            Add task<input name="task" value={this.state.task} onChange={this.handleChange}/>
-                        </label>
+                <div className='taskHeader'>
+                    <div className="todaysDate">{formattedDate}</div>
+                    <img src={goBackButton} width='30px' height='30px'onClick = {this.goBack} className='goBackButton'/>
+                </div>
 
-                        <button type="submit">Add</button>
-                    </form>
 
-                    {this.display()}
+                <div className='todaysTasksBG'>
+                    <div className='taskTitle'>
+                        Today's tasks: 
+                        {this.displayTodaysTasks()}
+                    </div>
                     
+                    
+
+                    <img className='addTaskButton' src={addTask_button} onClick={() => this.checkForMaxTasks()}/>
+
+
+                    <Modal show={this.state.modal}>
+                        <h2>Enter task</h2>
+
+                        <input type="text" value={this.state.modalInputName}
+                        name="modalInputName" maxlength = "22" placeholder='Enter task'
+                        onChange={e => this.handleMyChange(e)} className="form-control" />
+
+                        {/* <input type = "text" value={this.state.importance} name="importance"
+                        onChange={e => this.handleMyChange(e)} className = "form-control"
+                        maxlength = "22"/> */}
+
+
+
+                        <button onClick={e => this.handleSubmit(e)} type="button">Save</button>
+
+                        <button className="modal-close" onClick={e => this.modalClose(e)}>close</button>
+                    </Modal>
+
+
+
+
+
+                    <Modal show={this.state.editModal}>
+
+                        <input type="text" value={this.state.modalInputName}
+                        name="modalInputName" maxlength = "22" placeholder='Enter task'
+                        onChange={e => this.handleMyChange(e)} className="form-control" />
+
+                        {/* <input type = "text" value={this.state.importance} name="importance"
+                        onChange={e => this.handleMyChange(e)} className = "form-control"
+                        maxlength = "22"/> */}
+
+                        {/* <input type="color" list="presetColors" />
+                        <datalist id="presetColors" >
+                            <option data-value="red" onClick={e => this.setColor(e)}>#ff0000</option>/>
+                            <option data-value="green">#00ff00</option>
+                            <option data-value="blue">#0000ff</option>
+                        </datalist> */}
+
+                        
+
+
+                        <button onClick={e => this.handleEdit(e)} type="button">Save</button>
+                        <button className="modal-close" onClick={e => this.editModalClose(e)}>close</button>
+                    </Modal>
+
+                    <Modal show={this.state.modalMaxTasks}>
+                        <div>You have reached maximum number of tasks!</div>
+                        <button className="modal-close" onClick={e => this.modalMaxTasksClose(e)}>close</button>
+                    </Modal>
                 </div>
                 
             </>
-
-            
-
         );
     }
 }
@@ -127,37 +279,102 @@ export default AddTask;
 
 
 
-//TIMER FUNCTION:
- // constructor(props){
-    //     super(props);
-    //     this.state = {
-    //       data: 'Jordan Belfort'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// display(){
+    //     const { params: { dateString } } = this.props.match;//*************** */
+    //     var date = dateString;
+
+    //     var taskArray = [];
+
+    //     taskArray = JSON.parse(localStorage.getItem(date));
+
+    //     if(taskArray){
+    //         console.log("Local Storage array has elements in it!");
+    //     }else{
+    //         taskArray = this.state.taskArray;
     //     }
-    // }
-    
-    // getData(){
-    // setTimeout(() => {
-    //     console.log('Our data is fetched');
-    //     this.setState({
-    //     data: 'Hello WallStreet'
-    //     })
-    // }, 3000)
-    // }
-    
-    // componentDidMount(){
-    // this.getData();
-    // }
-    
-    // render() {
-    //     console.log("rendered!");
-    // return(
-    //     <div>
-    //         {this.state.data}
-    //     </div>
+
+    //     return (
+    //         <div>
+                
+    //             {
+    //                 taskArray.map((task, index) => {
+    //                     return(
+    //                         <div key = {index}>
+    //                             {task}
+    //                             <button onClick = {this.delete.bind(this, index, date)}>delete</button>
+    //                         </div>
+    //                     ); 
+    //                 })
+    //             }
+                
+    //         </div>
     //     );
-    
     // }
 
+    // delete(index, date) {
+
+    //     var oldArray = JSON.parse(localStorage.getItem(date));
+
+    //     oldArray.splice(index,1);
+    //     var newArray = JSON.stringify(oldArray);
+
+    //     localStorage.setItem(date,newArray);
+    //     this.setState({taskArray : newArray});
+    // }
+
+    
+
+    // handleFormSubmit = (e) => {
+    //     e.preventDefault();
+    //     const { params: { dateString } } = this.props.match;//*************** */
+    //     var date = dateString;
+        
+
+    //     const newTask = this.state.task;
+    //     var newArray = [];
+
+    //     newArray = JSON.parse(localStorage.getItem(date));
+
+    //     if(newArray){
+    //         console.log("Elements exist in array");
+    //     }else{
+    //         newArray = this.state.taskArray;
+    //     }
+
+    //     newArray = [...newArray, newTask];
+    //     this.setState({ taskArray : newArray});
+    //     localStorage.setItem( date , JSON.stringify(newArray));
+
+    // };
+
+    // handleChange = (event) => {
+    //     this.setState({ task : event.target.value });
+    // };
 
 
 
@@ -166,45 +383,15 @@ export default AddTask;
 
 
 
+     {/* <form onSubmit={this.handleFormSubmit}>
+                        <label>
+                            Add task<input name="task" value={this.state.task} onChange={this.handleChange}/>
+                        </label>
 
+                        <button type="submit">Add</button>
+                    </form>
 
-
-
-
-
-
-
-
-
-
-
-// const AddTask = () => {
-   
-
-//     // const [value, setValue] = useState(
-//     //     localStorage.getItem('myValueInLocalStorage') || ''
-//     //     );
-
-//     // useEffect(() => {
-//     //     localStorage.setItem('myValueInLocalStorage', value);
-//     //   }); //, [value]
-
-//     // const onChange = event => setValue(event.target.value);
-
-//     // return (
-//     //   <div>
-//     //         Add task
-//     //         <form onSubmit={onChange}>
-//     //             <input value={value} onChange = {onChange} placeholder = "Enter task..." type="text"  />
-//     //             <button>Click to submit</button>
-//     //         </form>
-//     //     <ul>
-//     //         <li><bold>{value}</bold></li>
-//     //     </ul>
-//     //   </div>
-//     // );
-// }
-
-
+                    {this.display()} */}
+                    {/* {this.Example()} */}
 
 

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { format, addMonths, subMonths, startOfWeek, endOfWeek, addDays, startOfMonth, endOfMonth, isSameMonth, isSameDay, parse } from 'date-fns';
 import './Calendar.scss';
-import AddTask from './AddTask';
 import { LinkContainer } from 'react-router-bootstrap';
 
 class Calendar extends React.Component {
@@ -15,7 +14,7 @@ class Calendar extends React.Component {
         const dateFormat = "MMMM/yyyy";
 
         return (
-            <div className="header row flex-middle">
+            <div className="header row flex-middle" id = "myRow">
                 <div className="col col-start">
                     <div className="icon" onClick={this.prevMonth}>
                     chevron_left
@@ -23,8 +22,6 @@ class Calendar extends React.Component {
                 </div>
                 <div className="col col-center">
                     <span>
-                    {console.log("THIS ONE!!")}
-                    {console.log(this.state.currentMonth)}
                     {format(this.state.currentMonth, dateFormat)}
                     </span>
                 </div>
@@ -79,7 +76,12 @@ class Calendar extends React.Component {
                 const cloneDay = day;//29 march, 2020...
 
                 days.push(
-                    <LinkContainer to = {`/myCalendar/${day}`}>
+                    <LinkContainer to = {{
+                        pathname : `/myCalendar/${day}`,
+                        state : {
+                            date : cloneDay
+                            }
+                        }}>
                         <div
                             className={`col cell ${!isSameMonth(day, monthStart)? "disabled":
                             isSameDay(day, selectedDate) ? "selected" :
@@ -99,8 +101,8 @@ class Calendar extends React.Component {
                 day = addDays(day, 1);
             }
             rows.push(
-                <div className="row" key={day}>
-                {days}
+                <div className="row" id = "myRow" key={day}>
+                    {days}
                 </div>
             );
             days = [];
@@ -108,11 +110,6 @@ class Calendar extends React.Component {
         return <div className="body">{rows}</div>;
         
     }
-
-    // goToAddTask = () => {
-    //     console.log("reached function!");
-    //     return(<AddTask />);
-    // }
 
     
 
@@ -137,7 +134,6 @@ class Calendar extends React.Component {
 
     render() {
         
-        //console.log(this.state.currentMonth);
         return (
             
             
@@ -176,68 +172,3 @@ export default Calendar;
 
 
 
-// <table>
-            //     <tr>
-            //         <th>Mon</th>
-            //         <th>Tue</th>
-            //         <th>Wed</th>
-            //         <th>Thu</th>
-            //         <th>Fri</th>
-            //         <th>Sat</th>
-            //         <th>Sun</th>
-            //     </tr>
-
-            //     <tr>
-            //         <td class = "empty"></td>
-            //         <td>1</td>
-            //         <td>2</td>
-            //         <td>3</td>
-            //         <td>4</td>
-            //         <td>5</td>
-            //         <td>6</td>
-            //     </tr>
-
-            //     <tr>
-            //         <td>7</td>
-            //         <td>8</td>
-            //         <td>9</td>
-            //         <td>10</td>
-            //         <td>11</td>
-            //         <td>12</td>
-            //         <td>13</td>
-            //     </tr>
-
-            //     <tr>
-            //         <td>14</td>
-            //         <td>15</td>
-            //         <td>16</td>
-            //         <td>17</td>
-            //         <td>18</td>
-            //         <td>19</td>
-            //         <td>20</td>
-            //     </tr>
-
-            //     <tr>
-            //         <td>21</td>
-            //         <td>22</td>
-            //         <td>23</td>
-            //         <td>24</td>
-            //         <td>25</td>
-            //         <td>26</td>
-            //         <td>27</td>
-            //     </tr>
-
-            //     <tr>
-            //         <td>28</td>
-            //         <td>29</td>
-            //         <td>30</td>
-            //         <td>31</td>
-            //         <td class = "empty" colspan = "3"></td>   
-            //     </tr>
-
-            //     <tr class = "bottomline">
-            //         <td colspan = "3">December</td>
-            //         <td></td>
-            //         <td colspan = "3">February</td>
-            //     </tr>
-            // </table>
