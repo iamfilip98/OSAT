@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './scss/main.scss';
 console.clear();
 
 const messages = [
@@ -101,11 +101,11 @@ class Chat extends React.Component {
             messages: [...this.state.messages, item]
         });
 
-        setTimeout(() => {
-            const items = document.querySelectorAll('li');
-            const lastItem = items[items.length - 1];
-            document.querySelector('.c-chat__list').scrollTop = lastItem.offsetTop + lastItem.style.height;
-        }, 100);
+        // setTimeout(() => {
+        //     const items = document.querySelectorAll('li');
+        //     const lastItem = items[items.length - 1];
+        //     document.querySelector('.c-chat__list').scrollTop = lastItem.offsetTop + lastItem.style.height;
+        // }, 100);
     }
 
     handleSubmit(e) {
@@ -166,7 +166,7 @@ class Chat extends React.Component {
                     {this.state.messages.map((message, index) => <Message key={index} data={message} />)}
                 </ul>
                 <form className="c-chat__form" onSubmit={this.handleSubmit}>
-                    <input type="text" name="input" placeholder="Type your message here..." autoFocus autoComplete="off" required />
+                    <input type="text" name="input" className='chatInput' placeholder="Type your message here..." autoFocus autoComplete="off" required />
                 </form>
             </div>
         );

@@ -2,15 +2,18 @@ import React, { Component } from 'react';
 import mobiscroll from "@mobiscroll/react";
 import "@mobiscroll/react/dist/css/mobiscroll.min.css";
 import { format } from 'date-fns';
-import ListGroup from 'react-bootstrap/ListGroup'
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
 import { LinkContainer } from 'react-router-bootstrap';
+import '../scss/main.scss';
 
 
 export class HomePage extends Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            clicks : 0
+        }
     }
 
 
@@ -34,16 +37,21 @@ export class HomePage extends Component {
         }else{
             taskArray = [];
         }
+        var lengthOfArray = taskArray.length;
         
         return(
-            <div>
+            <div className = 'taskBox'>
 
                 {
                     taskArray.map((task) => { 
                         return(
-                            <div>
-                                {task}
-                            </div>
+                            <>
+                                <div className = 'task_HP'>
+                                    {task[0]}
+                                </div>
+                                <input type = "checkbox" width="10px" height="10px" onClick={this.checkBoxClick.bind(this,lengthOfArray)}/>
+                                <br></br>
+                            </>
                         );
                     })
                 }
@@ -51,8 +59,53 @@ export class HomePage extends Component {
         );
     }
 
-    
+
+    checkBoxClick(arrayLength){
+
+        this.setState({ clicks : this.state.clicks + 1});
+
+        if(this.state.clicks >= arrayLength-1){
+            alert("All tasks completed!!!!!");
+            
+        }
+
+
+
+
+        
+        // var clicks = localStorage.getItem("clicks");
+        // var clicksInt = 0;
+
+        // if(clicks){
+        //     clicksInt = parseInt(clicks,10);
+        //     clicksInt += 1;
+        // }else{
+        //     clicksInt = 1;
+        // }
+
+        // if(clicksInt >= 3){
+        //     console.log("all tasks completed!");
+        // }
+
+        // var clicksString = clicksInt.toString();
+        // localStorage.setItem("clicks", clicksString);
+
+        
+
+    }
+
+    // displayTasksCompleted(){
+    //     if(this.state.clicks >= this.state.taskArray.length){
+    //         console.log("all tasks completed!")
+    //     }else{
+    //         console.log("sth")
+    //     }
+    // }
+
+
     render() {
+
+        
         return (
             <>
                  <h1 className = 'header'>Welcome to OSAT!</h1>
@@ -75,11 +128,8 @@ export class HomePage extends Component {
                 <h2>................................................</h2>
                 <h2>Today's Tasks</h2>
                 
-               
-               
+                {this.displayTasks()}
 
-               
-                    {this.displayTasks()}
             </>
         );
     }  

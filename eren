@@ -1,0 +1,250 @@
+[33mcommit 1300ca73b48f714b9e4d0db4129c7f80ccd6921a[m[33m ([m[1;36mHEAD -> [m[1;32mresourceLibrary[m[33m, [m[1;31morigin/resourceLibrary[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/davidBranch[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Mon Apr 13 17:14:54 2020 +0100
+
+    Further silly changes
+
+[33mcommit a01c8ade41f5996d6820d7bd7fde0a45c4ac4d76[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Mon Apr 13 17:11:38 2020 +0100
+
+    silly changes master
+
+[33mcommit 071478758c7338413193295bd6635eadd1649e2c[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Mon Apr 13 17:06:08 2020 +0100
+
+    Fixed some post-merge errors
+
+[33mcommit 9439198dff4840460917e171edc3e4fafa6b7cbb[m
+Merge: 6003d1d c40aeef
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Mon Apr 13 16:37:59 2020 +0100
+
+    Fixed merge conflicts with Filip's branch
+
+[33mcommit c40aeefb9e1e80e47365ff1633bb5a29d8c7c68b[m
+Merge: 41b7b6e 6003d1d
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Mon Apr 13 16:36:22 2020 +0100
+
+    fixed merge conflicts
+
+[33mcommit 6003d1d59329bab595741766f2f74694e37d2471[m
+Merge: 4852e92 3acd3ff
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Mon Apr 13 15:47:09 2020 +0100
+
+    Merge branch 'davidBranch'
+
+[33mcommit 3acd3ff50a601f2a900e747d151e8004b503bde1[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Mon Apr 13 10:43:27 2020 +0100
+
+    Tasks entered for today is displayed in HomePage
+
+[33mcommit 41b7b6ee4fe1a1df42037fdaefeece5ab5146cce[m
+Author: Filip Chrzanowski <ec18235@qmul.ac.uk>
+Date:   Sun Apr 12 17:16:41 2020 +0100
+
+    working personality and message service
+
+[33mcommit 9de0e4d41e4f2ee878179f2b07afba8f03fd76cd[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Sun Apr 12 15:15:52 2020 +0100
+
+    Finished 'enter task' use case with working localStorage
+
+[33mcommit 89c3ed0d7440a54e4262ea47d69952c2ad3143b9[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Sun Apr 12 10:53:11 2020 +0100
+
+    Calendar + Addtask + added dynamic routing to yield unique 'add task' pages
+
+[33mcommit b3adf508696934d71caab0ce1a796f2851c241ca[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Sat Apr 11 22:02:46 2020 +0100
+
+    Functioning 'enter task' use case, with local storage working
+
+[33mcommit fe77853772734ebf8a7681395cf8cc8cca0a442a[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Sat Apr 11 21:14:54 2020 +0100
+
+    Added 'enter task' section, but without allowing for storage of information
+
+[33mcommit ce1377def034199592b092af662037fe5328669f[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Fri Apr 10 13:52:25 2020 +0100
+
+    Proper calendar added, can switch between months and indicate selected date + current date
+
+[33mcommit 5a270cc1189b7feaed9be8c8f6f523a78daadd38[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Thu Apr 9 17:25:17 2020 +0100
+
+    Added non-functioning calendar, issues with time-format
+
+[33mcommit 4852e92ec564a20ecacbca30aa9070dd9037ae18[m
+Merge: 1de2112 b45bf44
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Wed Apr 8 17:54:03 2020 +0100
+
+    Merge branch 'davidBranch'
+
+[33mcommit b45bf44801e82ea519c4aef07e77d3b1d1f21df6[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Wed Apr 8 17:52:31 2020 +0100
+
+    Collected all css/sass in one file --> 'main.scss' and organized code
+
+[33mcommit 521279e4584a3356ffb0449b4392eeb484c27393[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Wed Apr 8 09:17:36 2020 +0100
+
+    Fixed typo that kept the homepage running in a loop
+
+[33mcommit e52e6f0fabe200cb35ec7ee1598162df013a4587[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Fri Mar 27 14:00:42 2020 +0000
+
+    Incorporated Sass and Bootstrap, created suggestive home-page with bottom navbar
+
+[33mcommit 694b59c198b7c909877a078ded98c2e2b37d45ae[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Thu Mar 26 15:09:19 2020 +0000
+
+    Test-commit
+
+[33mcommit 5f1c8ce218f10f991e73fd78b60f64f8c4f699ed[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Tue Mar 24 11:40:15 2020 +0000
+
+    Added sass functionality
+
+[33mcommit 1de21128ceeb4853a43b8b57d52eca98a1e8a75c[m
+Merge: 823d9f1 cda62d9
+Author: David Von Huth <d.vonhuth@se18.qmul.ac.uk>
+Date:   Tue Mar 24 10:49:38 2020 +0000
+
+    Merge pull request #2 from ec18235/davidBranch
+    
+    David branch
+
+[33mcommit cda62d900e7da4b29a8bef2c037b14fb81c1bd5a[m
+Merge: e8db7ff ec014de
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Tue Mar 24 10:38:51 2020 +0000
+
+    Merge branch 'davidBranch' of https://github.research.its.qmul.ac.uk/ec18235/seproject into davidBranch
+
+[33mcommit e8db7ffa75fa1e118df9eda201925da8d04677d2[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Mon Mar 23 18:51:33 2020 +0000
+
+    Added react-bootstrap, enabling bootstrap's own router function instead of <Link/>
+
+[33mcommit ec014de92df35897d140c2c2f2af8dc97bc377af[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Mon Mar 23 18:51:33 2020 +0000
+
+    Added react-bootstrap, enabling bootstrap's own router function instead of <Link/>
+
+[33mcommit 823d9f1a010e93cb3c2c855534be63c5df8b72ef[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Mon Mar 23 10:28:41 2020 +0000
+
+    Committed with package.json files also staged
+
+[33mcommit 6ee2213192e774dd0439e9707fd23f655b22f255[m
+Merge: a8dd947 e74179b
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Mon Mar 23 10:11:28 2020 +0000
+
+    Merge branch 'master' into old-project-state
+
+[33mcommit e74179bc2b39ff4b7a538bc946dcbd9f5534b2c4[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Mon Mar 23 09:24:35 2020 +0000
+
+    removed test-comment
+
+[33mcommit 5a4c5913b11a0f6dc0f41177d8fe638ed3f21f91[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Mon Mar 23 09:22:30 2020 +0000
+
+    Added test-comment
+
+[33mcommit a8dd947af6c6cd25bcccccc2b95dc89464a4d5a3[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Sun Mar 22 22:53:15 2020 +0000
+
+    Added pseudo pages for Home and Calendar for the landing page
+
+[33mcommit 953775e916781aa5504a17958679211ed9ce0f9e[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Sun Mar 22 16:04:32 2020 +0000
+
+    Fixed up whole project from previous buggy version
+
+[33mcommit 6421e964651514109c30e8ed187ff29462e9e12b[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Sun Mar 22 14:22:00 2020 +0000
+
+    Added test-Comment
+
+[33mcommit 956e2baf3a7d2a478fd8d69c296df03960eed327[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Sun Mar 22 12:27:21 2020 +0000
+
+    Fixed the css styling of several pages
+
+[33mcommit ab56b47b73e1edff05c5272539a7684f5791ee48[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Sun Mar 22 14:23:41 2020 +0000
+
+    Master branch test-comment
+
+[33mcommit 1de44d30af13d3c09c8e2c0949a9e60906630a46[m
+Merge: bf5c403 5b75252
+Author: David Von Huth <d.vonhuth@se18.qmul.ac.uk>
+Date:   Fri Mar 20 22:40:46 2020 +0000
+
+    Merge pull request #1 from ec18235/davidBranch
+    
+    David branch
+
+[33mcommit 5b752526fd10348c0aaba12f458f94d7e34e4a8e[m
+Merge: 5d325b4 bf5c403
+Author: David Von Huth <d.vonhuth@se18.qmul.ac.uk>
+Date:   Fri Mar 20 22:39:23 2020 +0000
+
+    Merge branch 'master' into davidBranch
+
+[33mcommit 5d325b4ee105f513ea4e5eaf695b5b6d1b2e8411[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Fri Mar 20 22:30:07 2020 +0000
+
+    Added the landing Page
+
+[33mcommit 6801822efabc7af129f891786ebe777cfcec9796[m
+Merge: 4a8b6a2 7e3eca9
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Fri Mar 20 18:44:40 2020 +0000
+
+    Removed some redundant code
+
+[33mcommit bf5c403ee15a00fab7b2c9bc510863c7104caa89[m
+Merge: 4a8b6a2 7e3eca9
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Fri Mar 20 18:44:40 2020 +0000
+
+    Merge branch 'master' of https://github.research.its.qmul.ac.uk/ec18234/seproject
+
+[33mcommit 4a8b6a25bfeb2a39fcab8104c63493adf4691629[m
+Author: David von Huth <davidvonhuth@gmail.com>
+Date:   Thu Mar 19 21:42:05 2020 +0000
+
+    Test-Edit
+
+[33mcommit 7e3eca9df4aed2a5d46d8cbb
