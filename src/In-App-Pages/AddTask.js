@@ -144,7 +144,6 @@ class AddTask extends Component {
                             
                         </div>
                         <br></br>
-                        
 
                     </>
                 );
