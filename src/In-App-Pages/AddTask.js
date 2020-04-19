@@ -231,9 +231,9 @@ class AddTask extends Component {
 
 
 
-                        <button onClick={e => this.handleSubmit(e)} type="button">Save</button>
+                        <button className='Button' onClick={e => this.handleSubmit(e)} type="button">Save</button>
 
-                        <button className="modal-close" onClick={e => this.modalClose(e)}>close</button>
+                        <button className="modal-close Button" onClick={e => this.modalClose(e)}>close</button>
                     </Modal>
 
 
@@ -260,13 +260,13 @@ class AddTask extends Component {
                         
 
 
-                        <button onClick={e => this.handleEdit(e)} type="button">Save</button>
-                        <button className="modal-close" onClick={e => this.editModalClose(e)}>close</button>
+                        <button className='Button' onClick={e => this.handleEdit(e)} type="button">Save</button>
+                        <button className="modal-close Button" onClick={e => this.editModalClose(e)}>close</button>
                     </Modal>
 
                     <Modal show={this.state.modalMaxTasks}>
                         <div>You have reached maximum number of tasks!</div>
-                        <button className="modal-close" onClick={e => this.modalMaxTasksClose(e)}>close</button>
+                        <button className="modal-close Button" onClick={e => this.modalMaxTasksClose(e)}>close</button>
                     </Modal>
                 </div>
                 

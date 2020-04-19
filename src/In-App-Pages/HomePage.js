@@ -3,13 +3,15 @@ import { format } from 'date-fns';
 import Card from 'react-bootstrap/Card';
 import '../scss/main.scss';
 import bulletPoint from '../assets/bulletPoint.png';
+import Modal from './Modal';
 
 export class HomePage extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            clicks : 0
+            clicks : 0,
+            modal: false
         }
     }
 
@@ -59,13 +61,21 @@ export class HomePage extends Component {
         );
     }
 
+    openModal(){
+        this.setState({ modal : true});
+    }
+
+    closeModal(){
+        this.setState({ modal : false});
+    }
 
     checkBoxClick(arrayLength){
 
         this.setState({ clicks : this.state.clicks + 1});
 
         if(this.state.clicks >= arrayLength-1){
-            alert("All tasks completed!!!!!");
+            // alert("All tasks completed!!!!!");
+            this.openModal();
             
         }
 
@@ -128,6 +138,14 @@ export class HomePage extends Component {
 
                 <h2>Today's Tasks</h2>
                 {this.displayTasks()}
+
+
+                <Modal show={this.state.modal}>
+                    <div>tasks completed!</div>
+                    <button className='Button' onClick={this.closeModal.bind(this)}> close</button>
+                </Modal>
+
+                {/* //onClick = {this.delete.bind(this, index, date)} */}
 
             </>
         );

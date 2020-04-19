@@ -121,6 +121,7 @@ class QuizScreen extends React.Component {
 
                 
                 
+                <button className='Button' onClick = {this.props.goToLandingPage}>Continue</button>
               </div> 
             : null }
             

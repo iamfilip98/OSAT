@@ -4,6 +4,7 @@ import addResource from './AddResourcesLibrary/AddResourceLibrary';
 import viewResources from './viewResourcesLibrary/viewResources';
 import { LinkContainer } from 'react-router-bootstrap';
 import Button from 'react-bootstrap/Button';
+import '../scss/main.scss';
 
 export class Library extends Component {
     render() {
@@ -18,11 +19,11 @@ export class Library extends Component {
 
 
                 <LinkContainer to = "/AddResources/AddResourceLibrary">
-                    <Button>Add resources</Button>
+                    <Button className='Button'>Add resources</Button>
                 </LinkContainer>
 
                 <LinkContainer to = "/viewResources/viewResourcesLibrary">
-                    <Button>View resources</Button>
+                    <Button className='Button'>View resources</Button>
                 </LinkContainer>
         
             </Router>
