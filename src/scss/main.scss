@@ -165,6 +165,7 @@ color: red;
 
 .myNavbar {
     position: absolute;
+
     bottom:20px;
     left: 12px;
     margin-left: 20px;
@@ -172,6 +173,7 @@ color: red;
 }
 .navbarButton{
     margin-left: 14px;
+
 }
 
 
@@ -263,7 +265,7 @@ td:hover
   
   .b-chat {
       width: 100%;
-      margin: 0 5%;
+      margin: 0 0%;
       padding: 1em 0;
       height: 80%;
       
@@ -282,7 +284,7 @@ td:hover
       width: 100%;
       position: relative;
       height: 100%;
-      font-size: 0.5em;
+      font-size: 1em;
   
       &__list {
           margin: 0;
@@ -304,7 +306,7 @@ td:hover
   
                   .c-chat__message {
                       background: #00ac92;
-                      color: #fff;
+                      color: black;
                       border-top-right-radius: 0;
                       border-top-left-radius: 10px;
                   }
@@ -368,7 +370,7 @@ td:hover
               font-family: monospace;
               border-bottom: 1px solid #fff;
               background: none;
-              color: #fff;
+              color: black;
               opacity: 1;
               transition: opacity 0.4s;
   
