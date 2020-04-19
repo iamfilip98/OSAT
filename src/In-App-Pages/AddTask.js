@@ -138,7 +138,7 @@ class AddTask extends Component {
                     <>
                         <div className = "taskBox">
                             <img src={bulletPoint} className='bulletPoint' />
-                            <div>{task[0]}</div>
+                            <div className='innerTask_AD'>{task[0]}</div>
                             <img className='editIcon'  src={editIcon} onClick={e => this.editTask(index)} />
                             <img className='deleteTask' src={deleteIcon} onClick = {this.deleteTask.bind(this, index, date)}/>
                             
@@ -222,7 +222,7 @@ class AddTask extends Component {
                         <h2>Enter task</h2>
 
                         <input type="text" value={this.state.modalInputName}
-                        name="modalInputName" maxlength = "22" placeholder='Enter task'
+                        name="modalInputName" maxlength = "21" placeholder='Enter task'
                         onChange={e => this.handleMyChange(e)} className="form-control" />
 
                         {/* <input type = "text" value={this.state.importance} name="importance"
@@ -243,7 +243,7 @@ class AddTask extends Component {
                     <Modal show={this.state.editModal}>
 
                         <input type="text" value={this.state.modalInputName}
-                        name="modalInputName" maxlength = "22" placeholder='Enter task'
+                        name="modalInputName" maxlength = "21" placeholder='Enter task'
                         onChange={e => this.handleMyChange(e)} className="form-control" />
 
                         {/* <input type = "text" value={this.state.importance} name="importance"

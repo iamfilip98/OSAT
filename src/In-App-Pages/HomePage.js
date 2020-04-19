@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import mobiscroll from "@mobiscroll/react";
-import "@mobiscroll/react/dist/css/mobiscroll.min.css";
 import { format } from 'date-fns';
 import Card from 'react-bootstrap/Card';
-import { LinkContainer } from 'react-router-bootstrap';
 import '../scss/main.scss';
-
+import bulletPoint from '../assets/bulletPoint.png';
 
 export class HomePage extends Component {
     constructor(props) {
@@ -40,17 +37,20 @@ export class HomePage extends Component {
         var lengthOfArray = taskArray.length;
         
         return(
-            <div className = 'taskBox'>
+            <div>
 
                 {
                     taskArray.map((task) => { 
                         return(
                             <>
                                 <div className = 'task_HP'>
-                                    {task[0]}
+                                    <img src={bulletPoint} className='bulletPoint_HP' />
+                                    <div className='innerTask_HP'>{task[0]}</div>
+                                    <input id='checkbox_HP' type = "checkbox" width="10px" height="10px" onClick={this.checkBoxClick.bind(this,lengthOfArray)}/>
                                 </div>
-                                <input type = "checkbox" width="10px" height="10px" onClick={this.checkBoxClick.bind(this,lengthOfArray)}/>
                                 <br></br>
+                                
+
                             </>
                         );
                     })
@@ -108,7 +108,6 @@ export class HomePage extends Component {
         
         return (
             <>
-                 <h1 className = 'header'>Welcome to OSAT!</h1>
                 <Card border = 'warning' bg={'info'} text={'light'}>
                     
 
@@ -126,8 +125,8 @@ export class HomePage extends Component {
                 </Card>
                 
                 <h2>................................................</h2>
+
                 <h2>Today's Tasks</h2>
-                
                 {this.displayTasks()}
 
             </>
