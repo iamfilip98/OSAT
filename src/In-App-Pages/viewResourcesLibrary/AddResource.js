@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import '../../scss/main.scss';
+import Button from 'react-bootstrap/Button';
 
 class AddResource extends Component {
   //empty state to contain user inputs
@@ -46,9 +48,9 @@ class AddResource extends Component {
           </div> */}
           
           <div class="section">
-            <button id="submitbtn" class="waves-effect waves-light btn" type="submit">Submit</button>
-            <button id="homepagebtn" class="waves-effect waves-light blue btn" type="submit">Home Page</button>
-            <button id="deltebtn" class="waves-effect waves-light btn " type="submit" onClick={this.props.deleteResource}>Delete</button>
+            <button id="submitbtn" class="waves-effect waves-light btn Button" type="submit">Submit</button>
+            <button id="homepagebtn" class="waves-effect waves-light blue btn Button" type="submit">Home Page</button>
+            <button id="deltebtn" class="waves-effect waves-light btn Button" type="submit" onClick={this.props.deleteResource}>Delete</button>
           </div>
         </form>
       </div>

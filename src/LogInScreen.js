@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Logo from "./assets/OSAT.png";
 import './scss/main.scss';
 import './login.css'
+import Button from 'react-bootstrap/Button';
+
 class LogInScreen extends Component {
 
 
@@ -86,7 +88,7 @@ class LogInScreen extends Component {
                   />
               </div>
               <div className="buttonbox">
-                <button  className="Button">
+                <button className="Button">
                     Login >
                 </button>
               </div>

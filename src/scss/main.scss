@@ -76,7 +76,7 @@ padding: 10px;
 margin: 5px;
 text-align: center;
 color: white;
-background-color: #2222bb;
+background-color: #20606e;
 }
 
 .password {
@@ -168,6 +168,7 @@ color: red;
     bottom:20px;
     left: 12px;
     margin-left: 20px;
+    z-index: 2;
     // $theme-colors: ("primary": purple );
 }
 .navbarButton{
@@ -513,4 +514,17 @@ td:hover
 .redStyle{
     background-color: red;
 }
+
+#modal{
+    position: fixed;
+    top: 83px;
+    left: 0;
+    z-index: 1;
+    display: none;
+    width: 46%;
+    height: 86%;
+    overflow: overlay;
+    outline: 0;
+}
+
 

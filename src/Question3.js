@@ -17,8 +17,8 @@ class Question3 extends React.Component {
             </div>
             
 
-            <button className="quizbutton" onClick={this.props.handleClick}>Internally</button>
-            <button className="quizbutton" onClick={this.props.handleClick}>Externally</button>
+            <button className="Button" onClick={this.props.handleClick}>Internally</button>
+            <button className="Button" onClick={this.props.handleClick}>Externally</button>
         </main>
       </div>
     );

@@ -17,8 +17,8 @@ class Question2 extends React.Component {
             </div>
             
 
-            <button className="quizbutton" onClick={(e) => {this.props.handleClick(e); this.props.handleBee(e)}}>Remind me</button>
-            <button className="quizbutton" onClick={(e) => {this.props.handleClick(e); this.props.handleOwl(e)}}>I've got this</button>
+            <button className="Button" onClick={(e) => {this.props.handleClick(e); this.props.handleBee(e)}}>Remind me</button>
+            <button className="Button" onClick={(e) => {this.props.handleClick(e); this.props.handleOwl(e)}}>I've got this</button>
         </main>
       </div>
     );
