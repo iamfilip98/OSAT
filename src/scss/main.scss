@@ -1,3 +1,4 @@
+ 
 //*********************  INDEX  ***************************************************
 body {
     margin: 0;
@@ -20,7 +21,14 @@ font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    background-color: rgba(230, 223, 164, 0.74);
+    // background-color: rgba(230, 223, 164, 0.74);
+    background-image: url("../assets/nature.jpg");
+    background-repeat: no-repeat;
+    background-size: 408px 700px;
+
+
+
+
     width: 414px;
     height: 700px;
     text-align: center;
@@ -46,7 +54,7 @@ font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 
 margin: 30px;
 border-radius: 15px 15px 15px 15px;
-background-color: #f0c185;
+background-color: #fffbfb87;
 }
 
 .LogInInfo {
@@ -90,7 +98,7 @@ color: red;
     margin: 25px;
     padding: 15px;
     border-radius: 15px 15px 15px 15px;
-    background-color: #ffe9cd;
+    background-color: #ffffff69;
 }
 
 //*********************  QUESTION-1/2/3  ********************************************
@@ -110,7 +118,7 @@ color: red;
     text-align: center;
 }
 .taskBox{
-    background-color: #ca9999;
+    background-color: #9d9c9c;
     display: flex;
     width: 325px;
     border-radius: 0px 10px 10px 0px;
@@ -118,8 +126,29 @@ color: red;
 
 .task_HP{
     background-color: rgb(89, 89, 160);
-    border-radius: 2rem;
+    border-radius: 0px 10px 10px 0px;
+    width: 325px;
+    font-size: 126%;
+    color: white;
+    font-family: monospace;
+    display: flex;
     
+}
+
+.innerTask_HP{
+    position: relative;
+    left: 31px;
+}
+
+.innerTask_AD{
+    color: white;
+}
+
+#checkbox_HP{
+    opacity: 1;
+    pointer-events: all;
+    position: absolute;
+    right: 94px;
 }
 
 .OSAT_HP_LOGO{
@@ -136,18 +165,24 @@ color: red;
 
 .myNavbar {
     position: absolute;
-    bottom:40px;
-    left: 27px;
-    $theme-colors: ("primary": purple );
+
+    bottom:20px;
+    left: 12px;
+    margin-left: 20px;
+    // $theme-colors: ("primary": purple );
+}
+.navbarButton{
+    margin-left: 14px;
+
 }
 
 
 
 .homepage-btn-toolbar > .btn {
     margin-right: 1.3rem;
-    padding-bottom: 2.5em;
-    border-radius: 10rem;
-    background-color: rgb(153, 0, 255);
+    border-radius: 0.5rem;
+    height: 40px;
+    background-color: #434343;
 }
 
 //**********************  CALENDAR  ************************************************
@@ -398,7 +433,7 @@ td:hover
 
 .todaysTasksBG{
     height: 487px;
-    background-color: #805c3c6b;
+    background-color: #fffefe74;
     width: 392px;
     position: relative;
     left: 7px;
@@ -457,6 +492,12 @@ td:hover
 
 .bulletPoint{
     width: 30px;
+}
+
+.bulletPoint_HP{
+    width: 30px;
+    position: absolute;
+    left: -2px;
 }
 
 .currentTime{

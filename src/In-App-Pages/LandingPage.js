@@ -71,23 +71,19 @@ class LandingPage extends Component {
                 <h2 className="myNavbar">
                     <ButtonToolbar className = 'homepage-btn-toolbar'>
                         <LinkContainer to="/">
-                            <Button variant="primary"><img src = {home} width='30' height='30'/></Button>
+                            <Button className='navbarButton' variant="info"><img src = {home} width='30' height='30'/></Button>
                         </LinkContainer>
           
                         <LinkContainer to="/calendar">
-                            <Button variant="primary"><img src = {date} width='30' height='30'/></Button>
+                            <Button className='navbarButton' variant="info"><img src = {date} width='30' height='30'/></Button>
                         </LinkContainer>
                        
                         <LinkContainer to="/textme">
-                            <Button variant="primary"><img src = {messages} width='30' height='30'/></Button>
+                            <Button className='navbarButton' variant="info"><img src = {messages} width='30' height='30'/></Button>
                         </LinkContainer>
           
                         <LinkContainer to="/library">
-                            <Button variant="primary"><img src = {books} width='30' height='30'/></Button>
-                        </LinkContainer>
-
-                        <LinkContainer to="/settings">
-                            <Button variant="primary"><img src = {settings} width='30' height='30'/></Button>
+                            <Button className='navbarButton' variant="info"><img src = {books} width='30' height='30'/></Button>
                         </LinkContainer>
 
 
