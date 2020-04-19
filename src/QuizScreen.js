@@ -114,13 +114,7 @@ class QuizScreen extends React.Component {
                 {this.state.owlimage ? <img src={Owl} height="40px" width="40px" /> : null}
                 <br></br>
                 <br></br>
-
-                <div>
-                  <button onClick = {this.props.goToLandingPage}>Continue</button>
-                </div>
-
-                
-                
+  
                 <button className='Button' onClick = {this.props.goToLandingPage}>Continue</button>
               </div> 
             : null }
