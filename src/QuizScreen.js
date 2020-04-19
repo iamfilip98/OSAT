@@ -2,8 +2,15 @@ import React, {Component} from 'react';
 import Question1 from './Question1';
 import Question2 from './Question2';
 import Question3 from './Question3';
-import Owl from './assets/barn-owl-night.webp';
+import Owl from './assets/owl.png';
+import Bee from './assets/bee.png';
 import './scss/main.scss';
+import OSAT_sublogo from './assets/OSAT_sublogo.png';
+import statusBar from './assets/statusBar.png';
+import { format } from 'date-fns';
+import date from './assets/date.png';
+import home from './assets/home.png';
+import { Router } from 'react-router-dom';
 
 class QuizScreen extends React.Component {
   constructor(props) {
@@ -13,7 +20,10 @@ class QuizScreen extends React.Component {
           question2: false,
           question3: false,
           result: false,
-          personalitytype: ""
+          personalitytype: "",
+          beeimage: false,
+          owlimage: false,
+          time: new Date()
       }
   }
 
@@ -53,11 +63,13 @@ class QuizScreen extends React.Component {
   bee = (e) =>{
     e.preventDefault();
     this.setState({ personalitytype: this.state.personalitytype + " Bee" });
+    this.setState({ beeimage: true });
   }
   
   owl = (e) =>{
     e.preventDefault();
     this.setState({ personalitytype: this.state.personalitytype + " Owl" });
+    this.setState({ owlimage: true });
   }
 
 
@@ -67,10 +79,22 @@ class QuizScreen extends React.Component {
   }
 
   render() {
+    var timeFormat = 'p';
+    var currentTime = format(this.state.time, timeFormat);
     
     return (
-      <div className="login">
+      <div>
+        <div className = "OSAT_HP_LOGO">
+                <img src={statusBar} height="22px" width="407px" className='statusBar' />
+                <div className='currentTime'>{currentTime}</div>
+                <br></br>
+                <img src={OSAT_sublogo} height="30px" width="120px"/>
+                <br></br>
+            </div>
+            <br></br>
+        <div className="login">
         <main>
+            
             <div className="box">
                 <b>QUIZ</b>
             
@@ -82,16 +106,31 @@ class QuizScreen extends React.Component {
               <div>
                 <div>
                 You are a <b>{this.state.personalitytype}</b>
-                </div>
                 
-                <button onClick = {this.props.goToLandingPage}>Continue</button>
+                <br></br>
+                
+                </div>
+                {this.state.beeimage ? <img src={Bee} height="40px" width="40px" /> : null}
+                {this.state.owlimage ? <img src={Owl} height="40px" width="40px" /> : null}
+                <br></br>
+                <br></br>
+
+                <div>
+                  <button onClick = {this.props.goToLandingPage}>Continue</button>
+                </div>
+
+                
+                
               </div> 
             : null }
             
             </div>
             
         </main>
+        </div>
+
       </div>
+      
     );
   }
 }
