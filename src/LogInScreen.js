@@ -56,7 +56,7 @@ class LogInScreen extends Component {
             <form className="LogInBox" onSubmit={this.verify}>
             
               <div className="LogInInfo">
-                  Log in using university email ID
+                  Log in with username or university email
               </div>
 
 

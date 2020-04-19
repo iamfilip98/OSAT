@@ -141,7 +141,11 @@ export class HomePage extends Component {
 
 
                 <Modal show={this.state.modal}>
-                    <div>tasks completed!</div>
+                    <h3>All of today's tasks has been completed. Good job!</h3>
+                    <br></br>
+                    <div>Give yourself a treat. Studies show that by rewarding yourself after completing
+                    some difficult task, the hormone Dopamine is released, which may help to keep
+                    your motivation up!</div>
                     <button className='Button' onClick={this.closeModal.bind(this)}> close</button>
                 </Modal>
 

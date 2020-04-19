@@ -6,19 +6,6 @@ import './index.css'
 
 function App () {
   const [resource, setresource] = useState([
-    //contains all the information of the resource page
-    {
-      title: 'What is self-esteem',
-      content: 'We all have times when we lack confidence... ',
-      id: 1,
-      open: false
-    },
-    {
-      title: 'Stress',
-      content: 'Most people feel stressed sometimes... ',
-      id: 2,
-      open: false
-    }
  
   ]);
 
